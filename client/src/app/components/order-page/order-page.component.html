@@ -1,0 +1,74 @@
+<div *ngIf="customer" class="top-page-div">
+    <p class="hello-class text-center">Hello {{customer.firstName}}</p>
+</div>
+
+<div class="cart-div">
+    <app-cart [beforeOrder]="beforeOrder"></app-cart>
+</div>
+
+<div class="order-div" *ngIf="cities">
+    <p class="order-title">Your Order</p>
+    <form #orderForm="ngForm">
+        <table>
+            <tr>
+                <td class="input-td">
+                    <select name="city" [(ngModel)]="order.city" #selectCity="ngModel" required>
+                        <option [value]="" [disabled]="true" [selected]=true>City</option>
+                        <option [value]="c._id" *ngFor="let c of cities">{{c.english_name | titlecase}}</option>
+                    </select>
+                    <small class="order-lable text-left">City</small>
+                    <small *ngIf="selectCity.errors?.required && selectCity.touched" class="err-msg">Must choose city.</small>
+                </td>
+            </tr>
+            <tr>
+                <td class="input-td">
+                    <input type="number" required name="houseNumber" pattern="^[0-9]+$" (keyup)="noZero()"
+                           [(ngModel)]="order.houseNumber" #houseNumberInfo="ngModel" placeholder="House number">
+                    <small class="order-lable text-left">House number</small>
+                    <small *ngIf="houseNumberInfo.errors?.required && houseNumberInfo.touched" class="err-msg">House number is requierd.<br>
+                           Only numbers are allowed. </small>
+                    <small *ngIf="houseNumberInfo.errors?.pattern && houseNumberInfo.touched" class="err-msg">Only numbers are allowed.</small>
+                    <small *ngIf="isZero" class="err-msg">House number cannot be zero</small>
+                </td>
+            </tr>
+            <tr>
+                <td class="input-td">
+                    <input type="text" placeholder="Street" required [(ngModel)]="order.street" #streetInfo="ngModel"
+                           name="street" minlength="2" pattern="[a-zA-Z \-]*">
+                    <small class="order-lable text-left">Street</small>
+                    <small *ngIf="streetInfo.errors?.required && streetInfo.touched" class="err-msg">Street is requierd.</small>
+                    <small *ngIf="streetInfo.errors?.minlength && streetInfo.touched" class="err-msg">Street name must containe at least two letters.</small>
+                    <small *ngIf="streetInfo.errors?.pattern&& streetInfo.touched" class="err-msg">Only letters are allowed.</small>
+                </td>
+            </tr>
+            <tr>
+                <td class="input-td">
+                    <input type="date" name="deliveryDate" min="{{currentDate}}" required [(ngModel)]="order.deliveryDate" 
+                           #deliveryDateInfo="ngModel">
+                    <small class="order-lable text-left">Delivery Date</small>
+                    <small *ngIf="deliveryDateInfo.errors?.required && deliveryDateInfo.touched" class="err-msg">Must pick a date.</small>
+                </td>
+            </tr>
+            <tr>
+                <td class="input-td">
+                    <input type="number" name="ccNumber" placeholder="Credit Card" required #ccNumberInfo="ngModel"
+                           [(ngModel)]="order.cc" pattern="^[0-9]{14,16}$">
+                    <small class="order-lable text-left">Credit Card number</small>
+                    <small *ngIf="ccNumberInfo.errors?.required && ccNumberInfo.touched" class="err-msg">Missing credit card number.<br>
+                           Only numbers are allowed</small>
+                    <small *ngIf="ccNumberInfo.errors?.pattern && ccNumberInfo.touched" class="err-msg">Invalid Credit card number. <br>
+                           Must contain between 14-16 numbers. <br> Only numbers are allowed </small>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="input-td">
+                        <button type="button" [disabled]="orderForm.form.invalid || isZero" (click)="makeOrder()"
+                            class="order-button">Order</button>
+                        <button type="button" (click)="goBackToShoppingPage()" class="cancel-button">Cancel Order</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

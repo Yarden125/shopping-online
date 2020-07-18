@@ -1,0 +1,46 @@
+/* Image design */
+img{
+    width:700px;
+    margin: 10px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px rgb(39, 12, 23);
+}
+
+/* button design */
+button{
+    margin:0;
+    color: white;
+    background-image: radial-gradient( rgb(121, 50, 74),  rgb(126, 39, 59));
+    border-radius: 5px;
+}
+
+/* Text design */
+p{
+    color: white;
+}
+
+/* Title design */
+h2{
+    color: white;
+    font-family: myTitle;
+    font-size: 50px;
+}
+
+/* Design for screen smaller than 575px */
+@media screen and (max-width: 575px) {
+    /* Title design */
+    h2{
+        font-size: 35px;
+    }
+
+    /* Image design */
+    img{
+        width:85%;
+    }
+
+    /* Text design */
+    p{
+        font-size: 15px;
+    }
+}
+

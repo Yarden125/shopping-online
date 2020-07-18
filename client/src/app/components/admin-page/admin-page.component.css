@@ -1,0 +1,257 @@
+
+/* The container div of the component: */
+.master-div{
+    position: relative;
+    height:100%;
+}
+
+/*Hello and Search div:  */
+.top-page-div{
+    margin:2px;
+    padding: 2px;
+}
+
+/* Product's div */
+.product-div{
+    display: inline-block;
+    border: 2px solid rgb(187, 187, 187);
+    box-shadow: 2px 2px 3px rgb(97, 97, 97);
+    background-color: rgba(255, 255, 255, 0.37);
+    margin: 5px;
+    padding: 5px;
+    width: 200px;
+    height:160px;
+    border-radius: 5px;   
+    cursor: pointer; 
+}
+
+/* Product's div when hover*/
+.product-div:hover{
+    display: inline-block;
+    border: 2px solid rgb(211, 211, 211);
+    box-shadow: 2px 2px 3px rgb(97, 97, 97);
+    background-color: rgba(255, 255, 255, 0.678);
+    margin: 5px;
+    padding: 5px;
+    width: 200px;
+    height:160px;
+    border-radius: 5px;   
+    cursor: pointer; 
+}
+
+/* Section - display all products */
+.products-section{
+    overflow-y: auto;
+    height:70%;
+    margin: 20px 5px;
+}
+
+/* Product's image */
+.product-image{
+    width:100px;
+    height: 100px;
+    filter: drop-shadow(2px 2px 3px rgb(29, 5, 14));
+}
+
+/* Product's text */
+.product-p{
+    color: rgb(51, 20, 20);
+    font-size: 14px;
+    margin: 2px;
+}
+
+/* Categories div */
+.categories-div{
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 15%;
+    margin: 5px;
+}
+
+/* Categories buttons */
+.category-button{
+    margin:2px;
+    color: white;
+    background-image: radial-gradient( rgb(121, 50, 74),  rgb(126, 39, 59));
+    border-radius: 5px;
+}
+
+/* Section of products and categories together */
+.products-master-div{
+    border: 1px solid rgb(133, 132, 132);
+    width:70%;
+    margin-top: 10px;
+    height:85%;
+    float: left;
+    box-shadow: 3px 3px 5px rgb(48, 48, 48);
+    border-radius: 7px;
+}
+
+/* Sidebar div */
+.sidebar-div{
+    border: 1px solid rgb(153, 153, 153);
+    float: left;
+    width:25%;
+    margin: 10px;
+    height:85%;
+    overflow-y: auto;
+    box-shadow: 3px 3px 5px rgb(88, 88, 88);
+    border-radius: 7px;
+}
+
+/* Default search button */
+.search-button{
+    visibility: none;
+} 
+
+/* Add button */
+.add-button{
+    width:30px;
+    height:30px;
+    text-align: center;
+    filter: brightness(200%);
+    margin: 3px;
+    padding-top: 3px;
+}
+
+/* Add button hover*/
+.add-button:hover{
+    width:35px;
+    height:35px;
+    text-align: center;
+    filter: brightness(200%);
+    cursor: pointer;
+    margin: 3px;
+    padding-top: 1px;
+}
+
+/* Add button div*/
+.add-button-div{
+    height:40px;
+}
+
+/* Hello Admin title */
+.hello-class{
+    display: inline-block;
+    position: absolute;
+    left: 55px;
+    padding:2px;
+    margin: 2px;
+    font-family: myTitle;
+    font-size: 35px;
+    color: white;
+}
+
+/* Search div */
+.search-class{
+    display: inline-block;
+    padding:2px;
+    margin: 2px;
+}
+
+/* Sorry title- when no products were found on search */
+.sorry{
+    color: white;
+    font-family: myTitle;
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Text- when no products were found on search */
+.no-result{
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    text-shadow: 2px 2px 3px rgb(24, 6, 14);
+}
+
+/* Design for screen smaller than 575px */
+@media screen and (max-width: 575px) {
+
+    /* Hello Admin title */
+    .hello-class{
+        margin: auto;
+        padding: 0;
+        font-size: 30px;
+        display: block;
+        width: 80%;
+        position: relative;
+        left: auto;
+    }
+
+    /* Search div */
+    .search-class {
+        display: block;
+        margin: 3px;
+        width: 80%;
+    }
+
+    /* Sidebar div */
+    .sidebar-div{
+        width: 85%;
+        height:280px;
+    }
+
+    /* Section of products and categories together */
+    .products-master-div{
+        width: 85%;
+        margin-left:3px ;
+    }
+
+    /* Categories div */
+    .categories-div{
+        height: 20%;
+        overflow-y: auto;
+    }
+
+    /* Product's div */
+    .product-div{
+        width: 175px;
+    }
+    
+    /* Product's div hover */
+    .product-div:hover{
+        width:175px;
+    }
+
+}
+
+/* Design for screen larger than 575px and smaller than 991px (including 991px) */
+@media screen and (max-width: 991px) and (min-width: 576px) {
+    /* Sidebar div */
+    .sidebar-div{
+        width: 35%;
+        height: 80%;
+    }
+
+    /* Section of products and categories together */
+    .products-master-div{
+        width: 55%;
+        height: 80%;
+        margin-left: 5px;
+    }
+
+    /* Product's div */
+    .product-div{
+        width: 160px;
+        height: 140px;
+    }
+    
+    /* Product's div hover*/
+    .product-div:hover{
+        width:160px;
+        height: 140px;
+    }
+
+    /* Product's text */
+    .product-p{
+        font-size: 10px;
+    }
+
+    /* Search div */
+    .search-class{
+        padding-left: 100px;
+    }
+}

@@ -1,0 +1,40 @@
+<div class="master-div">
+    <div *ngIf="admin" class="top-page-div">
+        <p class="hello-class text-left">Hello Admin {{admin.firstName}}</p>
+        <div class="search-class text-center">
+            <app-search-products (noSearchResultEvent)="receiveNoSearchResult($event)"></app-search-products>
+        </div>
+    </div>
+    
+    <div *ngIf="admin" class="sidebar-div">
+        <div class="add-button-div">
+            <span (click)="addProduct()" class="search-button">
+                <img src="/assets/icons/05.png" class="add-button">
+            </span>
+        </div>
+        <div *ngIf="showAdd">
+            <app-add-product (closeAddEvent)="receiveCancelAdding($event)"></app-add-product>
+        </div>
+        <div *ngIf="showUpdate">
+            <app-update-product [productToUpdate]="productToUpdate" (closeUpdateEvent)="receiveCancelUpdate($event)">
+            </app-update-product>
+        </div>
+    </div>
+
+    <div class="products-master-div">
+        <div class="categories-div">
+            <button *ngFor="let c of categories" class="category-button" (click)="getAllProductsByCategory(c._id)">{{c.category}}</button>
+        </div>
+        <div class="products-section">
+            <div *ngFor="let p of products" class="product-div" (click)="updateProduct(p)">
+                <img src="http://localhost:3001/assets/images/{{p.image}}" class="product-image">
+                <p class="product-p">{{p.productName}}</p>
+                <p class="product-p">{{p.price | currency : 'ILS'}}</p> 
+            </div>
+            <div *ngIf="noSearchResult">
+                <p class="sorry">Sorry!</p> 
+                <p class="no-result">No search results were found</p>
+            </div>
+        </div>
+    </div>
+</div>

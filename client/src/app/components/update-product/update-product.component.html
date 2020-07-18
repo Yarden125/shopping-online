@@ -1,0 +1,45 @@
+<p>Update Product</p>
+<form #updateProductForm="ngForm">
+    <table>
+        <tr>
+            <td class="input-td">
+                <input type="text" name="productName" placeholder="Product name" required #productNameInfo="ngModel"
+                       [(ngModel)]="productToUpdate.productName"  minlength="2" pattern="[a-zA-Z \-\d]*">
+                <small *ngIf="productNameInfo.errors?.required && productNameInfo.touched" class="err-msg text-center">Product's name is required</small>
+                <small *ngIf="productNameInfo.errors?.minlength&& productNameInfo.touched" class="err-msg text-center">Product's name must contain at least 2 characters.</small>
+                <small *ngIf="productNameInfo.errors?.pattern && productNameInfo.touched" class="err-msg text-center">Product's name can only contain letters, number and a dash "-".</small>
+            </td>
+        </tr>
+        <tr>
+            <td class="input-td">
+                <input type="number" name="price" placeholder="Price" required (keyup)="noZero()" pattern="\d+([.]\d+)?" #priceInfo="ngModel" [(ngModel)]="productToUpdate.price">
+                <small *ngIf="priceInfo.errors?.required && priceInfo.touched" class="err-msg text-center">Price is required</small>
+                <small *ngIf="priceInfo.errors?.pattern && priceInfo.touched" class="err-msg text-center">Only numbers higher than zero are allowed</small>
+                <small *ngIf="zero" class="err-msg text-center">Price need to be higher than zero</small>
+            </td>
+        </tr>
+        <tr>
+            <td class="input-td">
+                <label class="upload-image-button">Choose Image
+                    <input type="file" accept="image/*" placeholder="Upload image" name="productImage" (change)="onImageSelected($event)">
+                </label>
+                <small *ngIf="selectedImage" class="err-msg text-center">{{selectedImage.name}}</small>
+            </td>
+        </tr>
+        <tr>
+            <td class="input-td">
+                <select name="category" [(ngModel)]="productToUpdate.category._id" #selectCategory="ngModel" required>
+                    <option [value]="" [disabled]="true" [selected]=true>Category</option>
+                    <option [value]="c._id" *ngFor="let c of categories">{{c.category}}</option>
+                </select>
+                <small *ngIf="selectCategory.errors?.required && selectCategory.touched" class="err-msg text-center">Must choose category</small>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" [disabled]="updateProductForm.form.invalid || zero" (click)="updateProduct()">Update product</button>
+                <button type="button" (click)="sendCancelUpdate()">Cancel</button>
+            </td>
+        </tr>
+    </table>
+</form>

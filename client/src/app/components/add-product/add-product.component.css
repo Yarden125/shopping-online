@@ -1,0 +1,112 @@
+/* button design */
+button{
+    margin:2px;
+    color: white;
+    background-image: radial-gradient( rgb(121, 50, 74),  rgb(126, 39, 59));
+    border-radius: 5px;
+}
+
+/* button disabled design */
+button:disabled{
+    margin:0;
+    color: rgb(146, 146, 146);
+    background-image: radial-gradient( rgb(121, 93, 101), rgb(88, 54, 63));
+    border-radius: 5px;
+}
+
+/* Add Product Title design */
+p{
+    color:white;
+    font-family: myTitle;
+    font-size: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+/* table, td, tr design */
+table, tr, td{
+    margin: 0;
+    padding: 0;
+}
+
+/* table design */
+table{
+    margin: auto;
+}
+
+/* td with inputs design */
+.input-td{
+    padding: 0;
+    width: 250px;
+    height: 60px;
+    vertical-align: baseline;
+}
+
+/* Choose image button design */
+.upload-image-button{
+    width: 120px;
+    height: 30px;
+    margin:0;
+    color: white;
+    background-image: radial-gradient( rgb(121, 50, 74),  rgb(126, 39, 59));
+    border-radius: 4px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid rgb(80, 80, 80);
+    border-bottom: 2px solid rgb(80, 80, 80);
+}
+
+/* Choose image button when hover design */
+.upload-image-button:hover{
+    width: 120px;
+    height: 30px;
+    margin:0;
+    color: white;
+    background-image: radial-gradient( rgb(121, 50, 74),  rgb(126, 39, 59));
+    border-radius: 4px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid rgb(80, 80, 80);
+    border-bottom: 2px solid rgb(80, 80, 80);
+    cursor: pointer;
+}
+
+/* Choose image button when clicking on it design */
+.upload-image-button:active{
+    width: 120px;
+    height: 30px;
+    margin:0;
+    color: white;
+    background-image: radial-gradient( rgb(121, 50, 74),  rgb(126, 39, 59));
+    border-radius: 4px;
+    border-top: 2px solid rgb(80, 80, 80);
+    border-left: 2px solid rgb(80, 80, 80);
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    cursor: pointer;
+}
+
+/* Error messages and small text design */
+.err-msg{
+    color: white;
+    display: block;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgb(24, 6, 11); 
+    padding-left: 0px 3px;
+    font-size: 11px;
+}
+
+/* Input and select design */
+input, select{
+    width:190px;
+    height: 30px;
+    border-radius: 3px;
+    box-shadow: 3px 2px 5px rgb(53, 22, 31);
+    border: none;
+    background-color: rgba(255, 255, 255, 0.589);
+}
+
+/* Doesn't display the default type="file" design */
+input[type="file"]{
+    display: none;
+}

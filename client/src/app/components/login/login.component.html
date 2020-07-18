@@ -1,0 +1,40 @@
+<form #formInfo="ngForm">
+    <table>
+        <tr>
+            <td>
+                <h2>Login</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="admin" #isAdmin="ngModel" [(ngModel)]="login.isAdmin">
+                <small class="checkbox-text">Admin? Please check the check box</small>
+            </td>
+        </tr>
+        <tr>
+            <td class="input-login">
+                <input type="email" name="email" email="true" required #emailInfo="ngModel" class="login-input text-left"
+                       [(ngModel)]="login.email" placeholder="Email" autofocus>
+                <small *ngIf="emailInfo.errors?.required && emailInfo.touched" class="err-msg ">Email is required</small>
+            </td>
+        </tr>
+        <tr>
+            <td class="input-login">
+                <input type="password" name="password" required #passwordInfo="ngModel" [(ngModel)]="login.password"
+                       placeholder="Password" class="login-input text-left">
+                <small *ngIf="passwordInfo.errors?.required && passwordInfo.touched" class="err-msg ">Password is required</small>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button [disabled]="formInfo.form.invalid" (click)="logIn()" >Login</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Not a member yet? Please register here</p>
+                <button (click)="goToRegister()" >Register</button>
+            </td>
+        </tr>
+    </table>
+</form>

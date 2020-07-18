@@ -1,0 +1,62 @@
+/* Nav design */
+nav{
+    display: inline-block;
+}
+
+/* Div design */
+div{
+    display: inline-block;
+}
+
+/* "Navigation bar" - logout, home, ans span design */
+.logout-button, a, span{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* Logout button design */
+.logout-button{
+    margin: 0;
+    padding: 0;
+    padding-bottom: 4px;
+    font-size: 15px;
+}
+
+/* Logo image */
+img{
+    width:30px;
+    height:25px;
+    display: block;
+    filter: invert(100%) drop-shadow(2px 2px 3px rgb(20, 3, 9));
+    margin: auto;
+}
+
+/* Site name- part of logo design */
+p{
+    color: white;
+    text-shadow: 2px 2px 3px rgb(22, 5, 12);
+    font-family: myTitle;
+    font-size: 27px;
+    margin: 0;
+}
+
+/* Logo div */
+.logo-div{
+    display: block;
+}
+
+/* Design for screen smaller than 575px */
+@media screen and (max-width: 575px) {
+
+    /* Logo image */
+    img {
+        width: 25px;
+        height: 20px;
+    }
+
+    /* Site name- part of logo design */
+    p{
+        font-size: 20px;
+    }
+}

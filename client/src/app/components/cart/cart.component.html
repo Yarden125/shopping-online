@@ -1,0 +1,32 @@
+<p class="cart-title">Your Cart</p>
+<div *ngIf="cartsItems" class="shopping-list-div">
+    <button *ngIf="!beforeOrder" (click)="goBackToShoppingPage()" class="btn btn-link back-button">Back to Shop</button>
+    <div class="cart-items-div">
+        <table>
+                <tr *ngFor="let c of cartsItems">
+                    <td class="trash-td">
+                        <span *ngIf="beforeOrder" class="trash-button" (click)="removeCartItem(c._id)" title="remove item">
+                            <img src="/assets/icons/01.png" class="trash-icon">
+                        </span>
+                    </td>
+                    <td>
+                        <img src="http://localhost:3001/assets/images/{{c.product.image}}" class="product-image">
+                    </td>
+                    <td>
+                        <p class="shopping-list">{{c.product.productName}}: {{c.quantity}} X
+                            {{c.product.price | currency: 'ILS'}}</p>
+                    </td>
+                    <td>
+                        <p class="shopping-list">{{c.price | currency: 'ILS'}}</p>
+                    </td>
+                </tr>
+        </table>
+    </div>
+    <div class="bottom-div">
+        <p class="total-p text-left">Total Amount: {{totalAmount | currency: 'ILS'}}</p>
+        <button *ngIf="beforeOrder" class="cart-button" type="button"
+                (click)="removeAllCartsItems()">Remove All</button>
+        <button *ngIf="beforeOrder" type="button" class="cart-button" [disabled]="buttonDisabled"
+                (click)="order()">Order</button>
+    </div>
+</div>

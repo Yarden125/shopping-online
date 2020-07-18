@@ -1,0 +1,245 @@
+/* Top page div */
+.master-div{
+    position: relative;
+    height:90%;
+    margin-top: 13px;
+}
+
+/* Product div design */
+.product-div{
+    display: inline-block;
+    border: 2px solid rgb(187, 187, 187);
+    box-shadow: 2px 2px 3px rgb(97, 97, 97);
+    background-color: rgba(255, 255, 255, 0.37);
+    margin: 5px;
+    padding: 5px;
+    width: 200px;
+    height:160px;
+    border-radius: 5px;
+}
+
+/* Product div hover design */
+.product-div:hover{
+    display: inline-block;
+    border: 2px solid rgb(212, 212, 212);
+    box-shadow: 2px 2px 3px rgb(97, 97, 97);
+    background-color: rgba(255, 255, 255, 0.61);
+    margin: 5px;
+    padding: 5px;
+    width: 200px;
+    height:160px;
+    border-radius: 5px;
+}
+
+/* Product text design */
+.product-p{
+    color: rgb(51, 20, 20);
+    font-size: 14px;
+    margin: 2px;
+}
+
+/* Product image design */
+.product-image{
+    width:100px;
+    height: 100px;
+    filter: drop-shadow(2px 2px 3px rgb(29, 5, 14));
+}
+
+/* container div - containing cart and products section */
+.container{
+    height:90%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Categories div */
+.categories-div{
+    overflow-y: auto;
+    height: 15%;
+    margin: 5px;
+}
+
+/* Categories button design */
+.category-button{
+    margin:2px;
+    color: white;
+    background-image: radial-gradient( rgb(121, 50, 74),  rgb(126, 39, 59));
+    border-radius: 5px;
+}
+
+/* Products section - where products are displayed */
+.products-section{
+    overflow-y: auto;
+    height: 70%;
+    margin: 20px 5px;
+}
+
+/* Products and Categories div */
+.products-master-div{
+    border: 1px solid rgb(133, 132, 132);
+    width:70%;
+    margin-top: 10px;
+    height:100%;
+    float: left;
+    box-shadow: 3px 3px 5px rgb(48, 48, 48);
+    border-radius: 7px;
+}
+
+/* Cart div */
+.cart-div{
+    border: 1px solid rgb(153, 153, 153);
+    float: left;
+    width:25%;
+    margin: 10px;
+    height:100%;
+    box-shadow: 3px 3px 5px rgb(88, 88, 88);
+    border-radius: 7px;
+}
+
+/* Hello and Search div */
+.top-page-div{
+    margin:2px;
+    padding: 2px;
+}
+
+/* Hello title design */
+.hello-class{
+    display: inline-block;
+    position: absolute;
+    left: 90px;
+    padding:2px;
+    margin: 2px;
+    font-family: myTitle;
+    font-size: 35px;
+    color: white;
+}
+
+/* Search div design */
+.search-class{
+    display: inline-block;
+    padding:2px;
+    margin: 2px;
+}
+
+/* Sorry Title design - when no search results were found */
+.sorry{
+    color: white;
+    font-family: myTitle;
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Text design - when no search results were found */
+.no-result{
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    text-shadow: 2px 2px 3px rgb(24, 6, 14);
+}
+
+/* Design for screen smaller than 575px */
+@media screen and (max-width: 575px) {
+
+    /* Hello title design */
+    .hello-class{
+        margin: auto;
+        padding: 0;
+        font-size: 30px;
+        display: block;
+        width: 80%;
+        position: relative;
+        left: auto;
+    }
+
+    /* Search div design */
+    .search-class {
+        display: block;
+        margin: 3px;
+        width: 80%;
+    }
+
+    /* container div - containing cart and products section */
+    .container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* Cart div */
+    .cart-div{
+        grid-row:2;
+        width: 85%;
+        height:330px;
+    }
+
+    /* Products and Categories div */
+    .products-master-div{
+        width: 85%;
+        height: 330px;
+        margin-left:3px ;
+        grid-row:1;
+        float: none;
+    }
+
+    /* Categories div */
+    .categories-div{
+        height: 20%;
+    }
+
+    /* Product div design */
+    .product-div{
+        width: 175px;
+    }
+    
+    /* Product div hover design */
+    .product-div:hover{
+        width:175px;
+    }
+}
+
+/* Design for screen larger than 575px and smaller than 991px (including 991px) */
+@media screen and (max-width: 991px) and (min-width: 576px) {
+
+    /* Cart div */
+    .cart-div{
+        width: 35%;
+        height:500px;
+    }
+
+    /* Products and Categories div */
+    .products-master-div{
+        width: 55%;
+        height: 500px;
+        margin-left: 5px;
+    }
+
+    /* Product div design */
+    .product-div{
+        width: 160px;
+        height: 140px;
+    }
+    
+    /* Product div hover design */
+    .product-div:hover{
+        width:160px;
+        height: 140px;
+    }
+
+    /* Product text design */
+    .product-p{
+        font-size: 10px;
+    }
+
+    /* Search div design */
+    .search-class{
+        padding-left: 100px;
+    }
+
+    /* Top page div */
+    .master-div{
+        height: 100%;
+    }
+}
+

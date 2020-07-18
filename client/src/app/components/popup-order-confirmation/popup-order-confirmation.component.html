@@ -1,0 +1,16 @@
+<div class="modal-container" >
+    <div class="modal-body">
+        <div *ngIf="errorMessage">
+            <p class="title">Your order was successfully placed.</p>
+            <p class="text"> Click here to go back home. </p>
+            <button type="button" (click)="goHome()">Home</button>
+        </div>
+        <div *ngIf="!errorMessage">
+            <p class="title">Sorry! Something went wrong.</p>
+            <p class="text">Your order request has faild.</p> 
+            <p class="text">Please try again later</p> 
+            <button type="button" (click)="closePopup()">Close</button>
+        </div>
+    </div>
+</div>
+

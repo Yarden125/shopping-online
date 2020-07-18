@@ -1,0 +1,113 @@
+/* Title design */
+h2{
+    color: white;
+    font-family: myTitle;
+    font-size: 40px;
+    text-shadow: 2px 2px 3px rgb(39, 12, 23);
+}
+
+/* table, tr, td desgin */
+table, tr, td{
+    text-align: center;
+}
+
+/* table design */
+table{
+    margin-top: 30px;
+}
+
+/* td design */
+td{
+    height: 30px;
+    width: 250px;
+}
+
+/* Error message design */
+.err-msg{
+    color: white;
+    display: block;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgb(24, 6, 11); 
+    padding-left: 0px 3px;
+    font-size: 11px;
+}
+
+/* button design */
+button{
+    margin:auto;
+    color: white;
+    background-image: radial-gradient( rgb(121, 50, 74),  rgb(126, 39, 59));
+    border-radius: 5px;
+    margin-left: 8px;
+    text-align: center;
+}
+
+/* button design disabled */
+button:disabled{
+    margin:auto;
+    color: rgb(146, 146, 146);
+    background-image: radial-gradient( rgb(121, 93, 101), rgb(88, 54, 63));
+    border-radius: 5px;
+    margin-left: 8px;
+    text-align: center;
+}
+
+/* Login input design */
+.login-input{
+    width:190px;
+    margin: 7px;
+    height: 26px;
+    border-radius: 3px;
+    box-shadow: 3px 2px 5px rgb(53, 22, 31);
+    border: none;
+    padding: 3px;
+    background-color: rgba(255, 255, 255, 0.589);
+    text-align: left;
+}
+
+/* text next to check box design */
+.checkbox-text{
+    color: white;
+    text-shadow: 1px 1px 2px rgb(24, 6, 11); 
+    padding-left: 0px 3px;
+    font-size: 13px;
+}
+
+/* Text above register button design */
+p{
+    color: white;
+    text-shadow: 1px 1px 2px rgb(24, 6, 11); 
+    padding-left: 0px 3px;
+    font-size: 13px;  
+}
+
+/* Design for screen smaller than 575px */
+@media screen and (max-width: 575px) {
+
+    /* Title design */
+    h2 {
+        font-size: 30px;
+    }
+}
+
+/* Design for screen larger than 575px and smaller than 991px (including 991px) */
+@media screen and (max-width: 991px) and (min-width: 576px) {
+    
+    /* Login input design */
+    .login-input{
+        width:150px;   
+    }
+
+    /* td desgin */
+    td{
+        width: 160px;
+    }
+
+    /* text next to check box design */
+    .checkbox-text{
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+    }
+}
+

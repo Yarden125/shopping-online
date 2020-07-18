@@ -1,0 +1,20 @@
+export enum ActionType{
+    LogOut,
+    GetAllProducts,
+    GetCategories,
+    CountAllProducts,
+    CountAllOrders,
+    GetAdmin,
+    UpdateCustomer,
+    GetOneCart,
+    GetAllCarts,
+    GetLatestOrder,
+    AddCartItem,
+    GetAllCartsItems,
+    DeleteOneCartItem,
+    DeleteCartsItems,
+    GetOneCustomer,
+    GetCities,
+    SaveTotalAmount,
+    UpdateOneCart
+}

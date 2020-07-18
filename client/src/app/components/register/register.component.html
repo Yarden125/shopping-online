@@ -1,0 +1,105 @@
+<!-- Register form: -->
+<h3 class="register-title">Register</h3>
+<div class="register-top-div">
+       <form #registerForm="ngForm">
+              <table>
+                     <tr>
+                        <td class="input-td">
+                            <input type="text" name="firstName" #firstNameInfo="ngModel" placeholder="First Name"
+                                   [(ngModel)]="customer.firstName" required pattern="[a-zA-Z\-\s]*"minlength="2">
+                            <small *ngIf="firstNameInfo.errors?.required && firstNameInfo.touched"
+                                   class="err-msg">First name is required.</small>
+                            <small *ngIf="firstNameInfo.errors?.pattern && firstNameInfo.touched"
+                                   class="err-msg">Only letters are allowed.</small>
+                            <small *ngIf="firstNameInfo.errors?.minlength && firstNameInfo.touched"
+                                   class="err-msg">First name must have at least two letters.</small>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="input-td">
+                            <input type="text" name="lastName" #lastNameInfo="ngModel" placeholder="Last Name"
+                                   [(ngModel)]="customer.lastName" required pattern="[a-zA-Z\-\s]*"
+                                   minlength="2">
+                            <small *ngIf="lastNameInfo.errors?.required && lastNameInfo.touched"
+                                   class="err-msg">Last name is requierd.</small>
+                            <small *ngIf="lastNameInfo.errors?.pattern && lastNameInfo.touched"
+                                   class="err-msg">Only letters are allowed.</small>
+                            <small *ngIf="lastNameInfo.errors?.minlength&& lastNameInfo.touched"
+                                   class="err-msg">Last name must have at least two letters.</small>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="input-td">
+                            <input type="email" email="true" name="email" #emailInfo="ngModel"
+                                   placeholder="Email" [(ngModel)]="customer.email" required
+                                   pattern="^([a-z]|\d)+([_]|[-]|[a-z]|\d)*@([a-z]|\d)+([_]|[-]|[a-z]|\d)*\.[a-z]{2,3}((\.)([a-z]{2,3}))?$">
+                            <small *ngIf="emailInfo.errors?.required && emailInfo.touched" class="err-msg">Email is requierd.</small>
+                            <small *ngIf="emailInfo.errors?.pattern && emailInfo.touched" class="err-msg">Email is not valid.<br> Capital letters are not allowed</small>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="input-td">
+                            <input type="password" name="password" (keyup)="noAngularbrackets($event)"
+                                   #passwordInfo="ngModel" placeholder="Password" [(ngModel)]="customer.password"
+                                   required minlength="6" pattern="^[a-zA-Z0-9!@#$%^&*()_\+\-\=[\][?]+$">
+                            <small *ngIf="passwordInfo.errors?.required && passwordInfo.touched"
+                                   class="err-msg">Password is required.</small>
+                            <small *ngIf="passwordInfo.errors?.minlength && passwordInfo.touched"
+                                   class="err-msg">Password must contain at least 6 characters.</small>
+                            <small *ngIf="passwordInfo.errors?.pattern && passwordInfo.touched"
+                                   class="err-msg">Only letters,number, and !@#$%^&*()_-+=\? are allowed.</small>
+                            <small *ngIf="isAgularBrackets" class="err-msg">Angular brackets "<" are not allowed.</small> </td> </tr> <tr>
+                        <td class="input-td">
+                            <input type="tel" name="phone" #phoneInfo="ngModel" placeholder="Phone Number"
+                                   [(ngModel)]="customer.phone" required pattern="^0[2345789]\d?[-]?\d{7}$">
+                            <small *ngIf="phoneInfo.errors?.required && phoneInfo.touched" class="err-msg">Phone number is required.</small>
+                            <small *ngIf="phoneInfo.errors?.pattern && phoneInfo.touched" class="err-msg">Phone must start with 0 and contain between 9-10 digits.
+                                   <br> No letters are allowed.</small>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="input-td">
+                            <select name="city" [(ngModel)]="customer.city._id" #selectCity="ngModel" required>
+                                   <option value="city" [disabled]="true" [selected]=true>City</option>
+                                   <option [value]="city._id" *ngFor="let city of cities">{{city.english_name | titlecase}}</option>
+                            </select>
+                            <small *ngIf="selectCity.errors?.required && selectCity.touched" class="err-msg">Must select city.</small>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="input-td">
+                            <input type="number" required name="houseNumber" (keyup)="noZero()"
+                                   [(ngModel)]="customer.houseNumber" #houseNumberInfo="ngModel"
+                                   placeholder="House number" pattern="^[0-9]+$">
+                            <small *ngIf="houseNumberInfo.errors?.required && houseNumberInfo.touched"
+                                   class="err-msg">House number is required.<br>Only numbers are allowed</small>
+                            <small *ngIf="houseNumberInfo.errors?.pattern && houseNumberInfo.touched"
+                                   class="err-msg">Only numbers are allowed.</small>
+                            <small *ngIf="isZero" class="err-msg">House number cannot be zero</small>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="input-td">
+                            <input type="text" placeholder="Street" required [(ngModel)]="customer.street"
+                                   #streetInfo="ngModel" name="street" minlength="2" pattern="[a-zA-Z\-\s]*">
+                            <small *ngIf="streetInfo.errors?.required && streetInfo.touched"
+                                   class="err-msg">Street name is requierd.</small>
+                            <small *ngIf="streetInfo.errors?.minlength && streetInfo.touched"
+                                   class="err-msg">Street name must contain at least 2 characters.</small>
+                            <small *ngIf="streetInfo.errors?.pattern && streetInfo.touched" class="err-msg">Only letters and dash "-" are allowed.</small>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                            <div class="input-td">
+                                <button type="button"
+                                        [disabled]="registerForm.form.invalid || isZero || isAgularBrackets || customer.city._id === 'city' "
+                                        class="register-button" (click)="addCustomer()">Register</button>
+                                <button type="button" (click)="cancelRegistration()"
+                                        class="register-button">Cancel</button>
+                            </div>
+                        </td>
+                     </tr>
+              </table>
+       </form>
+</div>

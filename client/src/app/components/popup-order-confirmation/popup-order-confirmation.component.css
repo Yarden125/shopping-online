@@ -1,0 +1,53 @@
+/* Button design */
+button{
+    margin:0;
+    color: white;
+    background-image: radial-gradient( rgb(121, 50, 74),  rgb(126, 39, 59));
+    border-radius: 5px;
+}
+
+/* Modal container div */
+.modal-container{
+    background-image: linear-gradient( 135deg, rgb(58, 16, 16), rgb(107, 107, 107),rgb(133, 133, 133),rgb(107, 107, 107),rgb(58, 16, 16));
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    border-radius: 3px;
+}
+
+/* Modal footer */
+.modal-footer{
+    border: none;
+    text-align: center;
+}
+
+/* Title design */
+.title{
+    color: white;
+    text-shadow: 2px 2px 3px rgb(41, 11, 23);
+    font-family: myTitle;
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Text design */
+.text{
+    color: white;
+    text-shadow: 2px 2px 3px rgb(41, 11, 23);
+    font-size: 15px;
+}
+
+/* Design for screen smaller than 575px */
+@media screen and (max-width: 575px) {
+    
+    /* Title design */
+    .title{
+        color: white;
+        text-shadow: 2px 2px 3px rgb(41, 11, 23);
+        font-family: myTitle;
+        font-size: 30px;
+        padding: 0;
+        margin: 0;
+    }
+}

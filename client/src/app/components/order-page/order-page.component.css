@@ -1,0 +1,181 @@
+/* Order div */
+.order-div{
+    border: 1px solid rgb(133, 132, 132);
+    width:70%;
+    margin-top: 10px;
+    height:83%;
+    float: left;
+    overflow-y: auto;
+    box-shadow: 3px 3px 5px rgb(48, 48, 48);
+    border-radius: 7px;
+}
+
+/* Cart div */
+.cart-div{
+    border: 1px solid rgb(153, 153, 153);
+    float: left;
+    width:25%;
+    margin: 10px;
+    height:83%;
+    overflow-y: auto;
+    box-shadow: 3px 3px 5px rgb(88, 88, 88);
+    border-radius: 7px;
+}
+
+/* button design */
+.order-button, .cancel-button{
+    margin:0;
+    color: white;
+    background-image: radial-gradient( rgb(121, 50, 74),  rgb(126, 39, 59));
+    border-radius: 5px;
+}
+
+/* button disabled desing  */
+.order-button:disabled{
+    margin:0;
+    color: rgb(146, 146, 146);
+    background-image: radial-gradient( rgb(121, 93, 101), rgb(88, 54, 63));
+    border-radius: 5px;
+}
+
+/* Hello customer title div */
+.top-page-div{
+    width: 50px;
+    height: 50px;
+    margin:2px;
+    padding: 2px;
+}
+
+/* Hello customer design */
+.hello-class{
+    display: block;
+    position: absolute;
+    left: 100px;
+    padding:2px;
+    margin: 2px;
+    font-family: myTitle;
+    font-size: 35px;
+    color: white;
+}
+
+/* Order title */
+.order-title{
+    color: white;
+    font-family: myTitle;
+    font-size: 30px;
+    text-shadow: 2px 2px 3px rgb(36, 8, 18);
+}
+
+/* Inputs labels */
+.order-lable{
+    width:190px;
+    margin: 2px;
+    padding: 0;
+    color: white;
+    display: block;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgb(24, 6, 11);
+    font-size: 11px;
+}
+
+/* input and select design */
+input, select{
+    width:190px;
+    height: 26px;
+    border-radius: 3px;
+    box-shadow: 3px 2px 5px rgb(53, 22, 31);
+    border: none;
+    padding: 3px;
+    background-color: rgba(255, 255, 255, 0.589);
+}
+
+/* table, tr, td design */
+table, tr, td{
+    margin: auto;
+    padding-bottom: 5px;
+}
+
+/* td with inputs design */
+.input-td{
+    padding-left: 10px;
+}
+
+/* error message design */
+.err-msg{
+    color: white;
+    display: block;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgb(24, 6, 11); 
+    padding: 0px 3px;
+    font-size: 11px;
+}
+
+/* Design for screen smaller than 575px */
+@media screen and (max-width: 575px) {
+
+    /* Hello customer design */
+    .hello-class{
+        margin: auto;
+        padding: 0;
+        font-size: 30px;
+        display: block;
+        width: 90%;
+        position: relative;
+        left: 10px;
+    }
+
+    /* Hello customer title div */
+    .top-page-div{
+        width: 85%;
+       
+    }
+
+    /* Cart div */
+    .cart-div{
+        width: 85%;
+        
+    }
+
+    /* Order div */
+    .order-div{
+        width: 85%;
+        margin-left: 10px;  
+    }
+
+    /* table, tr, td design */
+    table, tr, td{
+        margin: auto;
+        padding-bottom: 5px;
+    }
+    
+    /* td with inputs design */
+    .input-td{
+        padding-left: 10px;
+    }
+}
+
+/* Design for screen larger than 575px and smaller than 991px (including 991px) */
+@media screen and (max-width: 991px) and (min-width: 576px) {
+    
+    /* Cart div */
+    .cart-div{
+        width: 35%;
+        height:500px;
+        display: inline-block;
+    }
+
+    /* Order div */
+    .order-div{
+        width: 55%;
+        height: 500px;
+        margin-left: 5px;
+    }
+
+    /* Hello customer design */
+    .hello-class{
+        position: relative;
+        width: 250px;
+        left: 20px;
+    }
+}
+

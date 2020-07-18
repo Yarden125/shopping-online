@@ -1,0 +1,48 @@
+<p>Add Product</p>
+
+<!-- Add product form by admin -->
+<form #addProductForm="ngForm">
+    <table>
+        <tr>
+            <td class="input-td">
+                <input type="text" name="productName" placeholder="Product name" required #productNameInfo="ngModel" 
+                       [(ngModel)]="product.productName" minlength="2" pattern="[a-zA-Z \-\d\%]*">
+                <small *ngIf="productNameInfo.errors?.required && productNameInfo.touched" class="err-msg text-center">Product's name is required.</small>
+                <small *ngIf="productNameInfo.errors?.minlength&& productNameInfo.touched" class="err-msg text-center">Product's name must contain at least 2 characters.</small>
+                <small *ngIf="productNameInfo.errors?.pattern && productNameInfo.touched" class="err-msg text-center">Product's name can only contain letters, number and a dash "-" and "%".</small>
+            </td>
+        </tr>
+        <tr>
+            <td class="input-td">
+                <input type="number" name="price" placeholder="Price" (keyup)="noZero()" pattern="\d+([.]\d+)?" required #priceInfo="ngModel" [(ngModel)]="product.price">
+                <small *ngIf="priceInfo.errors?.required && priceInfo.touched" class="err-msg text-center">Price is required</small>
+                <small *ngIf="priceInfo.errors?.pattern && priceInfo.touched" class="err-msg text-center">Only numbers higher than zero are allowed</small>
+                <small *ngIf="zero" class="err-msg text-center">Price cannot be zero</small>
+            </td>
+        </tr>
+        <tr>
+            <td class="input-td">
+                <label class="upload-image-button">Choose Image
+                    <input type="file" accept="image/*" placeholder="upload image" required name="image" (change)="onImageSelected($event)" #imageInfo="ngModel" [(ngModel)]="image">
+                </label>
+                <small *ngIf="selectedImage" class="err-msg text-center">{{selectedImage.name}}</small>
+                <small *ngIf="imageInfo.errors?.required && imageInfo.touched" class="err-msg text-center">Image is required</small>
+            </td>
+        </tr>
+        <tr>
+            <td class="input-td">
+                <select name="category" [(ngModel)]="product.category._id" #selectCategory="ngModel" required>
+                    <option value="category" [disabled]="true" [selected]=true>Category</option>
+                    <option [value]="c._id" *ngFor="let c of categories">{{c.category}}</option>
+                </select>
+                <small *ngIf="selectCategory.errors?.required && selectCategory.touched" class="err-msg text-center">Must choose category</small>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" [disabled]="addProductForm.form.invalid || zero || product.category._id === 'category'" (click)="addProduct()">Add product</button>
+                <button type="button" (click)="sendCancelAdding()">Cancel</button>
+            </td>
+        </tr>
+    </table>    
+</form>

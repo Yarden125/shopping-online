@@ -1,0 +1,133 @@
+/* Cart's div */
+.shopping-list-div{
+    height: 80%;
+}
+
+/* Shopping list */
+.shopping-list{
+    font-size: 14px;
+    display: inline-block;
+    color:white;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+
+/* Back to shop button */
+.back-button{
+    color: white;
+    text-decoration: underline;
+}
+
+/* Trash icon */
+.trash-icon{
+    width: 25px;
+    height: 25px;
+    filter:brightness(400%) ;
+}
+
+/* Trash icon hover */
+.trash-icon:hover{
+    width: 28px;
+    height: 28px;
+    filter:brightness(500%) ;
+}
+
+/* td where trash icon is */
+.trash-td{
+    width: 40px;
+    height: 40px;
+}
+
+/* table, tr, td design: */
+table, tr, td{
+    margin:5px;
+    padding: 2px;
+    text-align: center;
+}
+
+/* Section where all the carts items are at */
+.cart-items-div{
+    text-align: center;
+    overflow-y: auto;
+    height:75%;
+    box-shadow: inset 0 0 20px rgba(37, 9, 21, 0.705);
+    background-color: rgba(46, 46, 46, 0.075);
+    border-radius: 5px;
+    padding: 3px;
+}
+
+/* Cart title */
+.cart-title{
+    color: white;
+    font-family: myTitle;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgb(46, 45, 45);
+}
+
+/* Bottom div where buttons and total amount are at */
+.bottom-div{
+    position: absolute;
+    height:22%;
+    width: 20%;
+    padding: 3px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+/* Product image design  */
+.product-image{
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(2px 2px 3px rgb(29, 5, 14));
+}
+
+/* Total amount design */
+.total-p{
+    font-size:28px;
+    margin:2px;
+    font-family: myTitle;
+    color: white;
+    text-shadow: 2px 2px 3px rgb(20, 5, 10);
+}
+
+/* Buttons design */
+.cart-button{
+    margin:0;
+    color: white;
+    background-image: radial-gradient( rgb(121, 50, 74),  rgb(126, 39, 59));
+    border-radius: 5px;
+}
+
+/* Buttons desabled design */
+.cart-button:disabled{
+    margin:0;
+    color: rgb(146, 146, 146);
+    background-image: radial-gradient( rgb(121, 93, 101), rgb(88, 54, 63));
+    border-radius: 5px;
+}
+
+/* Design for screen smaller than 575px */
+@media screen and (max-width: 575px) {
+
+    /* Bottom div where buttons and total amount are at */
+    .bottom-div{
+        position: relative;
+        height:20%;
+        width: 90%;
+    }
+}
+
+/* Design for screen larger than 575px and smaller than 991px (including 991px) */
+@media screen and (max-width: 991px) and (min-width: 576px) {
+
+    /* Bottom div where buttons and total amount are at */
+    .bottom-div{
+        position: relative;
+        height:20%;
+        width: 80%;
+    }
+}
+
+
+

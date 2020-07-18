@@ -1,0 +1,20 @@
+<div class="modal-container">
+  <form #addCartItemForm="ngForm">
+    <div class="modal-body">
+      <div *ngIf="product">
+        <img src="http://localhost:3001/assets/images/{{product.image}}">
+        <p class="product-name">{{product.productName}}</p>
+        <p class="product-price">{{product.price | currency: 'ILS'}}</p>
+      </div>
+      <input type="number" required name="quantity" pattern="\d+" (keyup)="noZero()" [(ngModel)]="cartItem.quantity" 
+             #quantityInfo="ngModel" placeholder="Quantity">
+      <small *ngIf="quantityInfo.errors?.required && quantityInfo.dirty" class="err-msg">Quantity is required.</small>
+      <small *ngIf="quantityInfo.errors?.pattern && quantityInfo.touched" class="err-msg">Only numbers are allowed</small>
+      <small *ngIf="isZero" class="err-msg">Only numbers from 1 and higher are allowed</small>
+    </div>
+    <div class="modal-footer">
+      <button type="button" [disabled]="addCartItemForm.form.invalid || isZero" (click)="addToCart()">Add to cart</button>
+      <button type="button" (click)="activeModal.dismiss('Cross click')">Cancel</button>
+    </div>
+  </form>
+</div>
