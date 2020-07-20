@@ -34,10 +34,10 @@ app.use("/api/images", imagesController);
 app.use("/api/count", countController);
 
 if(process.env.NODE_ENV === "production"){
-    app.use(express.static(__dirname + "/client/dist"));
+    app.use(express.static(__dirname , "/client/dist/client-shopping"));
 
     app.get("*", (req,res)=>{
-        res.sendFile(path.join(__dirname + "/client/dist/index.html"));
+        res.sendFile(path.join(__dirname , "/client/dist/client-shopping/index.html"));
     });
 }
 
