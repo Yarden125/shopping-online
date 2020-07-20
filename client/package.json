@@ -8,10 +8,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod"
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "~0.803.17",
     "@angular/animations": "~8.2.13",
     "@angular/cli": "~8.3.17",
     "@angular/common": "~8.2.13",
@@ -33,7 +34,7 @@
     
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.803.17",
+    
   
     "@angular/language-service": "~8.2.13",
     "@types/node": "~8.9.4",
