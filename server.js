@@ -35,9 +35,9 @@ app.use("/api/count", countController);
 
 if(process.env.NODE_ENV === "production"){
     app.use(express.static(path.join(__dirname , "/client/dist/client-shopping")));
-
+    console.log(path.join(__dirname , "/client/dist/client-shopping"));
     app.get("*", (req,res)=>{
-        res.sendFile(path.join(__dirname , "/client/dist/client-shopping/index.html"));
+        res.sendFile(path.join( "/client/dist/client-shopping/index.html"));
     });
 }
 
