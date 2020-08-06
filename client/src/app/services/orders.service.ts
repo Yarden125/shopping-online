@@ -58,7 +58,8 @@ export class OrdersService {
 
   // Count number of orders throughout the site:
   public getCountOrders(): void {
-    this.httpClient.get<number>("http://localhost:3001/api/count/count-orders")
+    this.httpClient.get<number>("api/count/count-orders")
+    // this.httpClient.get<number>("http://localhost:3001/api/count/count-orders")
       .subscribe(count => {
         const action: Action = { type: ActionType.CountAllOrders, payload: count };
         this.redux.dispatch(action);

@@ -17,7 +17,8 @@ export class CitiesService {
 
   // Get all cities:
   public getAllCities(): void {
-    this.httpClient.get<City[]>("http://localhost:3001/api/cities")
+    this.httpClient.get<City[]>("api/cities")
+    // this.httpClient.get<City[]>("http://localhost:3001/api/cities")
       .subscribe(
         cities => {
           const action: Action = { type: ActionType.GetCities, payload: cities };

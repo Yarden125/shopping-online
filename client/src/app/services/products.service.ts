@@ -92,7 +92,8 @@ export class ProductsService {
 
   // Get count- number of products on the site:
   public getCountProducts(): void {
-    this.httpClient.get<number>("http://localhost:3001/api/count/count-products")
+    this.httpClient.get<number>("api/count/count-products")
+    // this.httpClient.get<number>("http://localhost:3001/api/count/count-products")
       .subscribe(count => {
         const action: Action = { type: ActionType.CountAllProducts, payload: count };
         this.redux.dispatch(action);
