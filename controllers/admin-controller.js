@@ -2,6 +2,7 @@ const express = require("express");
 const adminLogic = require("../bll/admin-logic");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
+const secret = process.env.SECRET || "Chuck-Norris";
 
 // Get Admin by login, using post router:
 router.post("/login", async (request, response) => {
@@ -22,7 +23,7 @@ router.post("/login", async (request, response) => {
         }
         if (isAdmin !== 0) {
             const admin = await adminLogic.getAdminFirstName();
-            const token = jwt.sign({ admin }, "Chuck-Norris", { expiresIn: "120m" });
+            const token = jwt.sign({ admin }, secret, { expiresIn: "120m" });
             response.json({ admin, token });
         }
         else if (isAdmin === 0) {

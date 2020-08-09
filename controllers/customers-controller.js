@@ -2,6 +2,7 @@ const express = require("express");
 const customersLogic = require("../bll/customers-logic");
 const adminLogic = require("../bll/admin-logic");
 const jwt = require("jsonwebtoken");
+const secret = process.env.SECRET || "Chuck-Norris";
 
 const router = express.Router();
 
@@ -37,7 +38,7 @@ router.post("/login", async (request, response) => {
         else {
             const customer = await customersLogic.getCustomerByLogin(login);
             if (customer !== null) {
-                const token = jwt.sign({ customer }, "Chuck-Norris", { expiresIn: "120m" });
+                const token = jwt.sign({ customer }, secret, { expiresIn: "120m" });
                 customer.password = "";
                 response.json({ customer, token });
             }
@@ -173,7 +174,7 @@ router.post("/register", async (request, response) => {
             }
             if (errorMessage === "") {
                 const addedCustomer = await customersLogic.addCustomer(customer);
-                const token = jwt.sign({ addedCustomer }, "Chuck-Norris", { expiresIn: "120m" });
+                const token = jwt.sign({ addedCustomer }, secret, { expiresIn: "120m" });
                 addedCustomer.password = "";
                 response.status(201).json({ addedCustomer, token });
             }
