@@ -38,17 +38,17 @@ export class CartsService {
 
   // Add new cart:
   public addNewCart(cart: Cart): Observable<Cart> {
-    return this.httpClient.post<Cart>("http://localhost:3001/api/carts", cart, this.getHeaders());
+    return this.httpClient.post<Cart>("/api/carts", cart, this.getHeaders());
   }
 
   // Get all carts by customer id:
   public getAllCartsByCutomerID(_id: string): Observable<Cart[]> {
-    return this.httpClient.get<Cart[]>("http://localhost:3001/api/carts/" + _id, this.getHeaders());
+    return this.httpClient.get<Cart[]>("/api/carts/" + _id, this.getHeaders());
   }
 
   // Get one cart by cart ID:
   public getOneCartByCartID(_id: string): void {
-    this.httpClient.get<Cart>("http://localhost:3001/api/carts/cart-by-cartID/" + _id, this.getHeaders())
+    this.httpClient.get<Cart>("/api/carts/cart-by-cartID/" + _id, this.getHeaders())
       .subscribe(cart => {
         const action: Action = { type: ActionType.GetOneCart, payload: cart };
         this.redux.dispatch(action);
@@ -69,7 +69,7 @@ export class CartsService {
 
   // Update cart status to be "open: false":
   public updateCart(cart: Cart): void {
-    this.httpClient.patch<Cart>("http://localhost:3001/api/carts/" + cart._id, cart, this.getHeaders())
+    this.httpClient.patch<Cart>("/api/carts/" + cart._id, cart, this.getHeaders())
       .subscribe(updatedCart => {
         const action: Action = { type: ActionType.UpdateOneCart, payload: updatedCart };
         this.redux.dispatch(action);

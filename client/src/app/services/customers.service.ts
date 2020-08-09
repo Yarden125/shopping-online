@@ -17,7 +17,7 @@ export class CustomersService {
 
   // Get one customer:
   public getOneCustomer(_id: string): void {
-    this.httpClient.get<Customer>("http://localhost:3001/api/customers/" + _id)
+    this.httpClient.get<Customer>("/api/customers/" + _id)
       .subscribe(
         customer => {
           const action: Action = { type: ActionType.GetOneCustomer, payload: customer };
@@ -28,7 +28,7 @@ export class CustomersService {
 
   // Update customer status:
   public updateOneCustomer(customer: Customer): void {
-    this.httpClient.patch<Customer>("http://localhost:3001/api/customers/" + customer._id, customer)
+    this.httpClient.patch<Customer>("/api/customers/" + customer._id, customer)
       .subscribe(
         updatedCustomer => {
           const action: Action = { type: ActionType.UpdateCustomer, payload: updatedCustomer };

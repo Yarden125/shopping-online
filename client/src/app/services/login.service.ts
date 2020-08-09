@@ -13,11 +13,11 @@ export class LoginService {
 
   // Login customer service:
   public loginCustomer(login: Login): Observable<any> {
-    return this.httpClient.post<any>("http://localhost:3001/api/customers/login", login);
+    return this.httpClient.post<any>("/api/customers/login", login);
   }
 
   // Login admin service:
   public loginAdmin(login:Login):Observable<any>{
-    return this.httpClient.post<any>("http://localhost:3001/api/admin/login", login);
+    return this.httpClient.post<any>("/api/admin/login", login);
   }
 }

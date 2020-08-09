@@ -12,6 +12,6 @@ export class RegisterService {
 
   // Register customer:
   public registerCustomer(customer:Customer):Observable<any>{
-    return this.httpClient.post<any>("http://localhost:3001/api/customers/register", customer);
+    return this.httpClient.post<any>("/api/customers/register", customer);
   }
 }

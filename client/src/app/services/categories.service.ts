@@ -34,7 +34,7 @@ export class CategoriesService {
 
   // Get all categories:
   public getAllCategories(): void {
-    this.httpClient.get<Category[]>("http://localhost:3001/api/categories", this.getHeaders())
+    this.httpClient.get<Category[]>("/api/categories", this.getHeaders())
       .subscribe(categories => {
         const action: Action = { type: ActionType.GetCategories, payload: categories };
         this.redux.dispatch(action);

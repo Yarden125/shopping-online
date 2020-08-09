@@ -34,7 +34,7 @@ export class CartsItemsService {
 
   // Add product to cart. result: product would become cartItem:
   public addProductToCart(cartItem: CartItem): void {
-    this.httpClient.post<CartItem>("http://localhost:3001/api/carts-items", cartItem, this.getHeaders())
+    this.httpClient.post<CartItem>("/api/carts-items", cartItem, this.getHeaders())
       .subscribe(addedCartItem => {
         cartItem._id = addedCartItem._id;
         const action: Action = { type: ActionType.AddCartItem, payload: cartItem };
@@ -53,7 +53,7 @@ export class CartsItemsService {
 
   // Get all cartsItems by cartID:
   public getAllCartsItemsByCartID(cartID: string): void {
-    this.httpClient.get<CartItem[]>("http://localhost:3001/api/carts-items/cartID/" + cartID, this.getHeaders())
+    this.httpClient.get<CartItem[]>("/api/carts-items/cartID/" + cartID, this.getHeaders())
       .subscribe(cartsItems => {
         const action: Action = { type: ActionType.GetAllCartsItems, payload: cartsItems };
         this.redux.dispatch(action);
@@ -71,7 +71,7 @@ export class CartsItemsService {
 
   // Delete one cartItem:
   public deleteOneCartItem(cartItemID: string): void {
-    this.httpClient.delete<CartItem>("http://localhost:3001/api/carts-items/" + cartItemID, this.getHeaders())
+    this.httpClient.delete<CartItem>("/api/carts-items/" + cartItemID, this.getHeaders())
       .subscribe(() => {
         const action: Action = { type: ActionType.DeleteOneCartItem, payload: cartItemID };
         this.redux.dispatch(action);
@@ -89,7 +89,7 @@ export class CartsItemsService {
 
   // Delete all cartsItems from cart:
   public deleteAllCartsItems(cartID: string): void {
-    this.httpClient.delete<CartItem[]>("http://localhost:3001/api/carts-items/delete-by-cartID/" + cartID, this.getHeaders())
+    this.httpClient.delete<CartItem[]>("/api/carts-items/delete-by-cartID/" + cartID, this.getHeaders())
       .subscribe(() => {
         const action: Action = { type: ActionType.DeleteCartsItems, payload: cartID };
         this.redux.dispatch(action);

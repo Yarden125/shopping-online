@@ -35,7 +35,7 @@ export class OrdersService {
 
   // Get customer's latest order:
   public getLastOrder(customerID: string): void {
-    this.httpClient.get<Order>("http://localhost:3001/api/orders/latest-order/" + customerID, this.getHeaders())
+    this.httpClient.get<Order>("/api/orders/latest-order/" + customerID, this.getHeaders())
       .subscribe(order => {
         const action: Action = { type: ActionType.GetLatestOrder, payload: order };
         this.redux.dispatch(action)
@@ -53,13 +53,12 @@ export class OrdersService {
 
   // Add order:
   public addOrder(order: Order): Observable<Order> {
-    return this.httpClient.post<Order>("http://localhost:3001/api/orders", order, this.getHeaders());
+    return this.httpClient.post<Order>("/api/orders", order, this.getHeaders());
   }
 
   // Count number of orders throughout the site:
   public getCountOrders(): void {
-    this.httpClient.get<number>("api/count/count-orders")
-    // this.httpClient.get<number>("http://localhost:3001/api/count/count-orders")
+    this.httpClient.get<number>("/api/count/count-orders")
       .subscribe(count => {
         const action: Action = { type: ActionType.CountAllOrders, payload: count };
         this.redux.dispatch(action);

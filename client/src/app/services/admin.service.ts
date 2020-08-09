@@ -12,6 +12,6 @@ export class AdminService {
 
   // Get admin:
   public getAdmin():Observable<Admin>{
-    return this.httpClient.get<Admin>("http://localhost:3001/api/admin")
+    return this.httpClient.get<Admin>("/api/admin")
   }
 }

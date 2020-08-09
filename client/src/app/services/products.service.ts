@@ -35,7 +35,7 @@ export class ProductsService {
 
   // Get all products by category:
   public getAllProductsByCategory(_id: string): void {
-    this.httpClient.get<Product[]>("http://localhost:3001/api/products/products-by-category/" + _id, this.getHeaders())
+    this.httpClient.get<Product[]>("/api/products/products-by-category/" + _id, this.getHeaders())
       .subscribe(products => {
         const action: Action = { type: ActionType.GetAllProducts, payload: products };
         this.redux.dispatch(action);
@@ -53,7 +53,7 @@ export class ProductsService {
 
   // Add product:
   public addProduct(fd: any): void {
-    this.httpClient.post<any>("http://localhost:3001/api/images/upload-image", fd, this.getHeaders())
+    this.httpClient.post<any>("/api/images/upload-image", fd, this.getHeaders())
       .subscribe(product => {
         this.getAllProductsByCategory(product.category._id);
       }, err => {
@@ -70,7 +70,7 @@ export class ProductsService {
 
   // Update product:
   public updateProduct(fd: any): void {
-    this.httpClient.put<any>("http://localhost:3001/api/images/update-image", fd, this.getHeaders())
+    this.httpClient.put<any>("/api/images/update-image", fd, this.getHeaders())
       .subscribe(product => {
         this.getAllProductsByCategory(product.category._id);
       }, err => {
@@ -87,13 +87,12 @@ export class ProductsService {
 
   // Get all products by search word:
   public getAllProductsBySearchWord(search: string): Observable<Product[]> {
-    return this.httpClient.get<Product[]>("http://localhost:3001/api/products/products-by-search/" + search, this.getHeaders());
+    return this.httpClient.get<Product[]>("/api/products/products-by-search/" + search, this.getHeaders());
   }
 
   // Get count- number of products on the site:
   public getCountProducts(): void {
-    this.httpClient.get<number>("api/count/count-products")
-    // this.httpClient.get<number>("http://localhost:3001/api/count/count-products")
+    this.httpClient.get<number>("/api/count/count-products")
       .subscribe(count => {
         const action: Action = { type: ActionType.CountAllProducts, payload: count };
         this.redux.dispatch(action);
