@@ -2,7 +2,7 @@
   <form #addCartItemForm="ngForm">
     <div class="modal-body">
       <div *ngIf="product">
-        <img src="http://localhost:3001/assets/images/{{product.image}}">
+        <img src="/assets/images/{{product.image}}">
         <p class="product-name">{{product.productName}}</p>
         <p class="product-price">{{product.price | currency: 'ILS'}}</p>
       </div>

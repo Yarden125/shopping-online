@@ -27,7 +27,7 @@
         </div>
         <div class="products-section">
             <div *ngFor="let p of products" class="product-div" (click)="updateProduct(p)">
-                <img src="http://localhost:3001/assets/images/{{p.image}}" class="product-image">
+                <img src="/assets/images/{{p.image}}" class="product-image">
                 <p class="product-p">{{p.productName}}</p>
                 <p class="product-p">{{p.price | currency : 'ILS'}}</p> 
             </div>
