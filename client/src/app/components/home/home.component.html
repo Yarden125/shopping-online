@@ -1,11 +1,11 @@
 <div class="home-top-div">
     <div class="login">
-        <div *ngIf="!loggedIn">
+        <div *ngIf="!loggedIn" class="to-login-div">
             <app-login (loggedInEvent)="receiveLoggedIn($event)"></app-login>
         </div>
         <div *ngIf="loggedIn">
             <div *ngIf="customer" class="hello-customer-div">
-                <h2 class="hello-customer text-center">Hello {{customer.firstName}}</h2>
+                <h2 class="hello-customer">Hello {{customer.firstName}}</h2>
                 <img src="/assets/images/26.png" class="divider">
             </div>
         </div>

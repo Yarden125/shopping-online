@@ -1,8 +1,10 @@
-<form #searchProductForm="ngForm">
-    <input type="text" name="searchProducts" [(ngModel)]="search" required #searchWordInfo="ngModel" placeholder="Search">
-    <small *ngIf='searchWordInfo.errors?.required && searchWordInfo.touched'></small>
-    <button type="button" [disabled]="searchProductForm.form.invalid" (click)="searchProductsBySearchWord()" class="search-button">
-        <img src="/assets/icons/02.png">
-    </button>
-    <button type="button" [disabled]="buttonDisabled" (click)="clearSearchResult()">Clear</button>
+<form #searchProductForm="ngForm" >
+    <div class="search-form">
+        <input type="text" name="searchProducts" [(ngModel)]="search" required #searchWordInfo="ngModel" placeholder="Search">
+        <small *ngIf='searchWordInfo.errors?.required && searchWordInfo.touched'></small>
+        <button type="button" [disabled]="searchProductForm.form.invalid" (click)="searchProductsBySearchWord()" class="search-button">
+            <img src="/assets/icons/02.png">
+        </button>
+        <button type="button" [disabled]="buttonDisabled" (click)="clearSearchResult()">Clear</button>
+    </div>
 </form>

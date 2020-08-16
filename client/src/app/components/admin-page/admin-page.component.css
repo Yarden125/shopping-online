@@ -183,21 +183,24 @@
 
     /* Search div */
     .search-class {
-        display: block;
+        display: inline-block;
         margin: 3px;
-        width: 80%;
+        padding:0;
     }
 
     /* Sidebar div */
     .sidebar-div{
         width: 85%;
         height:280px;
+        float:none;
+        margin:auto;
     }
 
     /* Section of products and categories together */
     .products-master-div{
         width: 85%;
-        margin-left:3px ;
+        float:none;
+        margin:7px auto;
     }
 
     /* Categories div */
@@ -251,7 +254,9 @@
     }
 
     /* Search div */
-    .search-class{
-        padding-left: 100px;
+    .search-class {
+        display: inline-block;
+        margin: 3px;
+        padding:0;
     }
 }

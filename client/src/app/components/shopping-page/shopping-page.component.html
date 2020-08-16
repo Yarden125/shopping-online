@@ -1,6 +1,6 @@
 <div class="master-div">
     <div *ngIf="customer" class="top-page-div">
-        <p class="hello-class text-left">Hello {{customer.firstName}}</p>
+        <p class="hello-class text-center">Hello {{customer.firstName}}</p>
         <div class="search-class text-center">
             <app-search-products (noSearchResultEvent)="receiveNoSearchResult($event)"></app-search-products>
         </div>

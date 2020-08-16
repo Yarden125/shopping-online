@@ -154,13 +154,6 @@
         left: auto;
     }
 
-    /* Search div design */
-    .search-class {
-        display: block;
-        margin: 3px;
-        width: 80%;
-    }
-
     /* container div - containing cart and products section */
     .container{
         display: grid;
@@ -171,14 +164,16 @@
     .cart-div{
         grid-row:2;
         width: 85%;
-        height:330px;
+        height: 330px;
+        margin: auto;
+        margin-top: 7px;
     }
 
     /* Products and Categories div */
     .products-master-div{
         width: 85%;
         height: 330px;
-        margin-left:3px ;
+        margin:auto;
         grid-row:1;
         float: none;
     }
@@ -230,11 +225,6 @@
     /* Product text design */
     .product-p{
         font-size: 10px;
-    }
-
-    /* Search div design */
-    .search-class{
-        padding-left: 100px;
     }
 
     /* Top page div */

@@ -16,6 +16,8 @@ function getCustomerLatestOrder(_id) {
 
 // Add order:
 function addOrder(order) {
+    // not saving the real data the client will enter - only a demo
+    order.cc = 0;
     return new Promise((resolve, reject) => {
         const addedOrder = new Order(order);
         addedOrder.save((err, addedOrder) => {

@@ -8,7 +8,7 @@
     margin: auto 10px;
 }
 
-/* Login div */
+/* Top Login div */
 .login{
     margin: auto 10px;
     display: inline-block;
@@ -16,6 +16,11 @@
     height:100%;
     text-align: left;
     vertical-align: top;
+}
+
+/* Login div - the one you put your details to login */
+.to-login-div{
+    text-align: center;
 }
 
 /* Right side div */
@@ -95,8 +100,9 @@
     color: white; 
     padding: 0;
     margin: 0;
-    font-family: totalCount;
-    font-size: 24px;
+    /* font-family: totalCount; */
+    font-size: 14px;
+    text-shadow: 1px 1px 2px rgb(24, 6, 11); 
 }
 
 /* Div for different customer's shopping statuses */
@@ -157,8 +163,9 @@ button{
         width: 85%;
         margin-top: 5px;
         display: block;
+        margin: auto;
     }
-
+    
     /* Total count div - before customer logged in */
     .total-count-div{
         width: 100%; 
@@ -181,6 +188,12 @@ button{
     /* Hello customer title */
     .hello-customer{
         font-size: 30px;
+        margin:auto;
+    }
+    
+    /* Hello customer div */
+    .hello-customer-div{
+        margin:auto;
         text-align: center;
     }
 
@@ -189,14 +202,9 @@ button{
         display: none;
     }
 
-    /* Hello customer div */
-    .hello-customer-div{
-        width: 100%;
-    }
-
     /* Total Orders and Products count text design*/
     .total-count{
-        font-size: 17px;
+        font-size: 14px;
         margin: 5px;
     }
 
@@ -243,7 +251,7 @@ button{
 
     /* Total Orders and Products count text design*/
     .total-count{
-        font-size: 16px;
+        font-size: 10px;
     }
 
     /* Total Orders and Products count div- when customer is logged in*/

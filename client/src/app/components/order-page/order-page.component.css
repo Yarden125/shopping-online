@@ -119,7 +119,7 @@ table, tr, td{
         padding: 0;
         font-size: 30px;
         display: block;
-        width: 90%;
+        width: 100%;
         position: relative;
         left: 10px;
     }
@@ -127,19 +127,23 @@ table, tr, td{
     /* Hello customer title div */
     .top-page-div{
         width: 85%;
-       
+        margin:auto;
+        text-align: center;
     }
 
     /* Cart div */
     .cart-div{
         width: 85%;
-        
+        float:none;
+        margin: auto;
     }
 
     /* Order div */
     .order-div{
         width: 85%;
-        margin-left: 10px;  
+        margin-top: 5px;
+        float:none;
+        margin: 7px auto;
     }
 
     /* table, tr, td design */
@@ -162,6 +166,8 @@ table, tr, td{
         width: 35%;
         height:500px;
         display: inline-block;
+        float:none;
+        margin: auto;
     }
 
     /* Order div */
@@ -169,13 +175,17 @@ table, tr, td{
         width: 55%;
         height: 500px;
         margin-left: 5px;
+        float:none;
+        margin: auto;
     }
 
     /* Hello customer design */
     .hello-class{
         position: relative;
         width: 250px;
-        left: 20px;
+        /* left: 20px; */
+        float:none;
+        margin: auto;
     }
 }
 

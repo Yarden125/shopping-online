@@ -71,8 +71,26 @@ main{
     filter: invert(100%) brightness(1000%) drop-shadow(2px 2px 3px rgb(31, 8, 19));
 }
 
+/* Disclaimer text */
+.disclaimer-p{
+    margin: 0px;
+    padding: -0.5px;
+    font-size: 11px;
+    color: rgb(145, 21, 21);
+}
+
+/* Disclaimer div */
+.disclaimer-div{
+    display: inline-block;
+}
+
 /* Design for screen smaller than 575px */
 @media screen and (max-width: 575px) {
+    
+    /* Top div */
+    section{
+        grid-template-rows: 25% 75%; 
+    }
 
     /* Contact us title */
     .contact-us-title{
@@ -109,5 +127,18 @@ main{
     /* main design */
     main{
         overflow-x: hidden;
+    }
+
+    /* Disclaimer div */
+    .disclaimer-div{
+        padding-top: 80px;
+    }
+
+    /* Disclaimer text */
+    .disclaimer-p{
+        margin: 0px;
+        padding: -0.5px;
+        font-size: 9px;
+        color: rgb(145, 21, 21);
     }
 }

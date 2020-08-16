@@ -70,7 +70,7 @@ table, tr, td{
     position: absolute;
     height:22%;
     width: 20%;
-    padding: 3px;
+    padding: 0px;
     margin-top: 5px;
     margin-left: 5px;
 }
