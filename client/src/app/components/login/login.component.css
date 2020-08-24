@@ -4,6 +4,7 @@ h2{
     font-family: myTitle;
     font-size: 40px;
     text-shadow: 2px 2px 3px rgb(39, 12, 23);
+    margin:0;
 }
 
 /* table, tr, td desgin */
@@ -14,7 +15,7 @@ table, tr, td{
 
 /* table design */
 table{
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 /* td design */
@@ -35,7 +36,7 @@ td{
 
 /* button design */
 button{
-    margin:auto;
+    margin-left:0 !important;
     color: white;
     background-image: radial-gradient( rgb(121, 50, 74),  rgb(126, 39, 59));
     border-radius: 5px;
@@ -45,7 +46,7 @@ button{
 
 /* button design disabled */
 button:disabled{
-    margin:auto;
+    margin-left:0 !important;
     color: rgb(146, 146, 146);
     background-image: radial-gradient( rgb(121, 93, 101), rgb(88, 54, 63));
     border-radius: 5px;
@@ -66,6 +67,14 @@ button:disabled{
     text-align: left;
 }
 
+/* Login form */
+.login-form{
+    display: block;
+    margin: auto;
+    text-align: center;
+    width: 100%
+}
+
 /* text next to check box design */
 .checkbox-text{
     color: white;
@@ -78,7 +87,8 @@ button:disabled{
 p{
     color: white;
     text-shadow: 1px 1px 2px rgb(24, 6, 11); 
-    padding-left: 0px 3px;
+    padding:3px;
+    margin: 0;
     font-size: 13px;  
 }
 
@@ -87,7 +97,7 @@ p{
 
     /* Title design */
     h2 {
-        font-size: 30px;
+        font-size: 40px;
     }
 }
 
@@ -101,7 +111,7 @@ p{
 
     /* td desgin */
     td{
-        width: 160px;
+        width: 80%;
     }
 
     /* text next to check box design */

@@ -1,56 +1,71 @@
-<div class="home-top-div">
-    <div class="login">
-        <div *ngIf="!loggedIn" class="to-login-div">
-            <app-login (loggedInEvent)="receiveLoggedIn($event)"></app-login>
-        </div>
-        <div *ngIf="loggedIn">
-            <div *ngIf="customer" class="hello-customer-div">
-                <h2 class="hello-customer">Hello {{customer.firstName}}</h2>
-                <img src="/assets/images/26.png" class="divider">
-            </div>
-        </div>
+<div class="home-div">
+  <!-- Login -->
+  <div class="login-div">
+    <div *ngIf="!loggedIn" class="login">
+      <app-login (loggedInEvent)="receiveLoggedIn($event)"></app-login>
     </div>
+  </div>
 
-    <div class="welcome-div">
-        <h2 class="welcome-title">Welcome to Shopping Smart</h2>
-        <p class="welcome-p">Here you would be able to buy your groceries from the comfort of your home.<br>
-                            All you have to do is lean back, log in and start clicking and your delivery would be at your doorstep in no time.<br>
-                            Let's get started.</p>
-        <img src="/assets/images/20.png" class="image">
+  <!-- Welcome and Customer's Shopping Details -->
+  <div *ngIf="customer" class="welcome">
+    <div *ngIf="carts">
+      <div *ngIf="cart && cart.open">
+        <p class="welcome-back-title text-center">
+          Welcome back {{ customer.firstName }}
+        </p>
+        <img src="/assets/images/26.png" class="divider" />
+        <p class="shopping-details-text text-center">
+          You have an open cart from <br />
+          {{ cart.date | date: "MMM d, y, h:mm a" }}
+        </p>
+        <p *ngIf="cartsItems" class="shopping-details-text text-center">
+          For the total amount of {{ totalAmount | currency: "ILS" }}
+        </p>
+        <button (click)="goToShoppingPage()">Resume shopping</button>
+      </div>
+      <div *ngIf="!cart && latestOrder">
+        <p class="welcome-back-title text-center">
+          Welcome back {{ customer.firstName }}
+        </p>
+        <img src="/assets/images/26.png" class="divider" />
+        <p class="shopping-details-text text-center">
+          Your last purchase was made on <br />
+          {{ latestOrder.orderDate | date: "MMM d, y, h:mm a" }}
+        </p>
+        <p class="shopping-details-text text-center">
+          For the total amount of
+          {{ latestOrder.price | currency: "ILS" }}
+        </p>
+        <button (click)="createNewCart()">Start shopping</button>
+      </div>
     </div>
+    <div *ngIf="customer.newCustomer">
+      <p class="welcome-title text-center">
+        Welcome {{ customer.firstName }}
+      </p>
+      <img src="/assets/images/26.png" class="divider" />
+      <p class="shopping-details-text text-center">
+        to your first time shopping at our website.
+      </p>
+      <p class="shopping-details-text text-center">
+        Please press on "Start Shopping" to start.
+      </p>
+      <button (click)="createNewCart()">Start Shopping</button>
+    </div>
+  </div>
 
-    <div class="panelC">
-        <div class="panelC-above-count">
-            <div *ngIf="customer" class="panelC-top-div">
-                <div *ngIf="carts">
-                    <div *ngIf="cart && cart.open">
-                        <p class="welcome-back-title text-center">Welcome back {{customer.firstName}}</p>
-                        <p class="panelC-text text-center">You have an open cart from <br> {{cart.date | date: 'MMM d, y, h:mm a'}}</p>
-                        <p *ngIf="cartsItems" class="panelC-text text-center">For the total amount of {{totalAmount | currency: 'ILS'}}</p>
-                        <button (click)="goToShoppingPage()">Resume shopping</button>
-                    </div>
-                    <div *ngIf="!cart && latestOrder">
-                        <p class="welcome-back-title text-center">Welcome back {{customer.firstName}} </p>
-                        <p class="panelC-text text-center">Your last purchase was made on <br> {{latestOrder.orderDate | date: 'MMM d, y, h:mm a'}}</p>
-                        <p class="panelC-text text-center">For the total amount of {{latestOrder.price | currency: 'ILS'}}</p>
-                        <button (click)="createNewCart()">Start shopping</button>
-                    </div>
-                </div>
-                <div *ngIf="customer.newCustomer">
-                    <p class="panelC-title text-center">Welcome {{customer.firstName}} </p>
-                    <p class="panelC-text text-center">to your first time shopping at our website.</p>
-                    <p class="panelC-text text-center">Please press on "Start Shopping" to start.</p>
-                    <button (click)="createNewCart()">Start Shopping</button>
-                </div>
-                <div class="total-count-div-customer">
-                    <p class="total-count text-left">Orders made on the site: {{countOrders}}</p>
-                    <p class="total-count text-left">Products available: {{countProducts}}</p>
-                </div>
-            </div>
-        </div>
-        <div *ngIf="!customer" class="total-count-div">
-            <p class="total-count text-left">Orders made on the site: {{countOrders}}</p>
-            <p class="total-count text-left">Products available: {{countProducts}}</p>
-        </div>
-    </div>
+  <!-- Image -->
+  <div class="image-div">
+    <img src="/assets/images/20.png" class="image" />
+  </div>
+
+  <!-- Oreders and Products Counts -->
+  <div class="total-count-div">
+    <p class="total-count text-center">
+      Orders made on the site: {{ countOrders }}
+    </p>
+    <p class="total-count text-center">
+      Products available: {{ countProducts }}
+    </p>
+  </div>
 </div>

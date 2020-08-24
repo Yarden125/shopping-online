@@ -1,0 +1,33 @@
+/* Disclaimer and text design */
+.disclaimer-p, p{
+    color: white;
+    font-size: 12px;
+    margin: auto;
+}
+
+/* Disclaimer div */
+.disclaimer-div{
+    margin: 20px auto;
+    width:80%;
+}
+
+/* Home link design */
+a{
+    color: white;
+    font-size: 15px;
+}
+
+/* Home link design - hover*/
+a:hover{
+    color: white;
+    font-size: 15px;
+}
+
+/* Disclaimer title design */
+h2{
+    color: white;
+    font-family: myTitle;
+    font-size: 40px;
+    text-shadow: 2px 2px 3px rgb(39, 12, 23);
+    margin:0;
+}

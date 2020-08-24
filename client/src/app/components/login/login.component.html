@@ -1,11 +1,11 @@
-<form #formInfo="ngForm">
+<form #formInfo="ngForm" class="login-form">
     <table>
         <tr>
             <td>
                 <h2>Login</h2>
             </td>
         </tr>
-        <tr>
+        <tr *ngIf="isDevMode()">
             <td>
                 <input type="checkbox" name="admin" #isAdmin="ngModel" [(ngModel)]="login.isAdmin">
                 <small class="checkbox-text">Admin? Please check the check box</small>

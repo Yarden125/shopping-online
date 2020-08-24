@@ -53,7 +53,7 @@
                 <td class="input-td">
                     <input type="number" name="ccNumber" placeholder="Credit Card" required #ccNumberInfo="ngModel"
                            [(ngModel)]="order.cc" pattern="^[0-9]{14,16}$">
-                    <small class="order-lable text-left">Credit Card number</small>
+                    <small class="order-lable text-left">Credit Card number<br>(*Don't use your real credit card)</small>
                     <small *ngIf="ccNumberInfo.errors?.required && ccNumberInfo.touched" class="err-msg">Missing credit card number.<br>
                            Only numbers are allowed</small>
                     <small *ngIf="ccNumberInfo.errors?.pattern && ccNumberInfo.touched" class="err-msg">Invalid Credit card number. <br>

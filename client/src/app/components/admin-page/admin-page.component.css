@@ -1,18 +1,17 @@
-
 /* The container div of the component: */
-.master-div{
+.master-div {
     position: relative;
-    height:100%;
+    height: 100%;
 }
 
 /*Hello and Search div:  */
-.top-page-div{
-    margin:2px;
+.top-page-div {
+    margin: 2px;
     padding: 2px;
 }
 
 /* Product's div */
-.product-div{
+.product-div {
     display: inline-block;
     border: 2px solid rgb(187, 187, 187);
     box-shadow: 2px 2px 3px rgb(97, 97, 97);
@@ -20,13 +19,13 @@
     margin: 5px;
     padding: 5px;
     width: 200px;
-    height:160px;
-    border-radius: 5px;   
-    cursor: pointer; 
+    height: 160px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 /* Product's div when hover*/
-.product-div:hover{
+.product-div:hover {
     display: inline-block;
     border: 2px solid rgb(211, 211, 211);
     box-shadow: 2px 2px 3px rgb(97, 97, 97);
@@ -34,34 +33,34 @@
     margin: 5px;
     padding: 5px;
     width: 200px;
-    height:160px;
-    border-radius: 5px;   
-    cursor: pointer; 
+    height: 160px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 /* Section - display all products */
-.products-section{
+.products-section {
     overflow-y: auto;
-    height:70%;
+    height: 70%;
     margin: 20px 5px;
 }
 
 /* Product's image */
-.product-image{
-    width:100px;
+.product-image {
+    width: 100px;
     height: 100px;
     filter: drop-shadow(2px 2px 3px rgb(29, 5, 14));
 }
 
 /* Product's text */
-.product-p{
+.product-p {
     color: rgb(51, 20, 20);
     font-size: 14px;
     margin: 2px;
 }
 
 /* Categories div */
-.categories-div{
+.categories-div {
     overflow-x: auto;
     overflow-y: hidden;
     height: 15%;
@@ -69,45 +68,45 @@
 }
 
 /* Categories buttons */
-.category-button{
-    margin:2px;
+.category-button {
+    margin: 2px;
     color: white;
-    background-image: radial-gradient( rgb(121, 50, 74),  rgb(126, 39, 59));
+    background-image: radial-gradient( rgb(121, 50, 74), rgb(126, 39, 59));
     border-radius: 5px;
 }
 
 /* Section of products and categories together */
-.products-master-div{
+.products-master-div {
     border: 1px solid rgb(133, 132, 132);
-    width:70%;
+    width: 70%;
     margin-top: 10px;
-    height:85%;
+    height: 85%;
     float: left;
     box-shadow: 3px 3px 5px rgb(48, 48, 48);
     border-radius: 7px;
 }
 
 /* Sidebar div */
-.sidebar-div{
+.sidebar-div {
     border: 1px solid rgb(153, 153, 153);
     float: left;
-    width:25%;
+    width: 25%;
     margin: 10px;
-    height:85%;
+    height: 85%;
     overflow-y: auto;
     box-shadow: 3px 3px 5px rgb(88, 88, 88);
     border-radius: 7px;
 }
 
 /* Default search button */
-.search-button{
+.search-button {
     visibility: none;
-} 
+}
 
 /* Add button */
-.add-button{
-    width:30px;
-    height:30px;
+.add-button {
+    width: 30px;
+    height: 30px;
     text-align: center;
     filter: brightness(200%);
     margin: 3px;
@@ -115,9 +114,9 @@
 }
 
 /* Add button hover*/
-.add-button:hover{
-    width:35px;
-    height:35px;
+.add-button:hover {
+    width: 35px;
+    height: 35px;
     text-align: center;
     filter: brightness(200%);
     cursor: pointer;
@@ -126,31 +125,29 @@
 }
 
 /* Add button div*/
-.add-button-div{
-    height:40px;
+.add-button-div {
+    height: 40px;
 }
 
 /* Hello Admin title */
-.hello-class{
-    display: inline-block;
-    position: absolute;
-    left: 55px;
-    padding:2px;
-    margin: 2px;
+.hello-class {
+    display: block;
+    padding: 0;
+    margin: 0;
     font-family: myTitle;
-    font-size: 35px;
+    font-size: 30px;
     color: white;
 }
 
 /* Search div */
-.search-class{
+.search-class {
     display: inline-block;
-    padding:2px;
+    padding: 2px;
     margin: 2px;
 }
 
 /* Sorry title- when no products were found on search */
-.sorry{
+.sorry {
     color: white;
     font-family: myTitle;
     font-size: 40px;
@@ -159,7 +156,7 @@
 }
 
 /* Text- when no products were found on search */
-.no-result{
+.no-result {
     color: white;
     padding: 0;
     margin: 0;
@@ -171,11 +168,9 @@
 @media screen and (max-width: 575px) {
 
     /* Hello Admin title */
-    .hello-class{
+    .hello-class {
         margin: auto;
-        padding: 0;
         font-size: 30px;
-        display: block;
         width: 80%;
         position: relative;
         left: auto;
@@ -185,78 +180,78 @@
     .search-class {
         display: inline-block;
         margin: 3px;
-        padding:0;
+        padding: 0;
     }
 
     /* Sidebar div */
-    .sidebar-div{
+    .sidebar-div {
         width: 85%;
-        height:280px;
-        float:none;
-        margin:auto;
+        height: 280px;
+        float: none;
+        margin: auto;
     }
 
     /* Section of products and categories together */
-    .products-master-div{
+    .products-master-div {
         width: 85%;
-        float:none;
-        margin:7px auto;
+        float: none;
+        margin: 7px auto;
     }
 
     /* Categories div */
-    .categories-div{
+    .categories-div {
         height: 20%;
         overflow-y: auto;
     }
 
     /* Product's div */
-    .product-div{
+    .product-div {
         width: 175px;
     }
-    
-    /* Product's div hover */
-    .product-div:hover{
-        width:175px;
-    }
 
+    /* Product's div hover */
+    .product-div:hover {
+        width: 175px;
+    }
 }
 
 /* Design for screen larger than 575px and smaller than 991px (including 991px) */
 @media screen and (max-width: 991px) and (min-width: 576px) {
+
     /* Sidebar div */
-    .sidebar-div{
+    .sidebar-div {
         width: 35%;
         height: 80%;
     }
 
     /* Section of products and categories together */
-    .products-master-div{
+    .products-master-div {
         width: 55%;
         height: 80%;
         margin-left: 5px;
     }
 
     /* Product's div */
-    .product-div{
+    .product-div {
         width: 160px;
         height: 140px;
     }
-    
+
     /* Product's div hover*/
-    .product-div:hover{
-        width:160px;
+    .product-div:hover {
+        width: 160px;
         height: 140px;
     }
 
     /* Product's text */
-    .product-p{
+    .product-p {
         font-size: 10px;
     }
-
+    
     /* Search div */
     .search-class {
         display: inline-block;
         margin: 3px;
-        padding:0;
+        padding: 0;
     }
 }

@@ -1,41 +1,20 @@
-/* Welcome div- introduction to website */
-.welcome-div{
-    display: inline-block;
-    width:40%;
-    height:100%;
+/* Login*/
+.login {
     text-align: center;
-    vertical-align: top;
-    margin: auto 10px;
+    margin: auto;
 }
 
-/* Top Login div */
-.login{
-    margin: auto 10px;
-    display: inline-block;
-    width:25%;
-    height:100%;
-    text-align: left;
-    vertical-align: top;
-}
-
-/* Login div - the one you put your details to login */
-.to-login-div{
+/* Div for different customer's shopping statuses */
+.welcome {
+    width: 75%;
     text-align: center;
-}
-
-/* Right side div */
-.panelC{
-    display: inline-block;
-    width:25%;
-    height:100%;
-    vertical-align: top;
-    position: relative;
-    right: 0;
-    margin: auto ;
+    display: block;
+    margin: 7px auto;
+    padding: 5px;
 }
 
 /* Welcome title design */
-.welcome-title{
+.welcome-title {
     color: white;
     font-family: myTitle;
     font-size: 50px;
@@ -43,93 +22,78 @@
 }
 
 /* Welcome text design */
-.welcome-p{
+.welcome-p {
     color: white;
 }
 
 /* Hello customer div */
-.hello-customer-div{
+.hello-customer-div {
     margin-top: 40px;
     width: 100%;
     text-align: center;
 }
 
 /* Hello customer title */
-.hello-customer{
+.hello-customer {
     color: white;
     font-family: myTitle;
     font-size: 45px;
 }
 
 /* Divider image */
-.divider{
-    width: 70%;
-    height: 50px;
+.divider {
+    width: 25%;
+    height: 30px;
     opacity: 0.7;
     filter: invert(100%) drop-shadow(2px 2px 5px rgb(29, 5, 14));
-    margin: 3px auto;
-}
-
-/* Image under Welcome section */
-.image{
-    width:60%;
+    margin: 1px auto;
     display: inline-block;
+}
+
+/* Image-div under Welcome section */
+.image-div {
+    width: 100%;
+    display: inline-block;
+    margin: auto;
+    padding: 3px;
+}
+
+/* Image inside of Image-div */
+.image {
+    width: 15%;
+    display: block;
     filter: drop-shadow(2px 2px 3px rgb(29, 5, 14));
+    margin: auto;
 }
 
-/* Total Orders and Products count div- before logged in*/
-.total-count-div{
-    position: absolute;
+/* Total Orders and Products count div*/
+.total-count-div {
     display: block;
-    top: 300px;
-    left: 15px;
-    width: 90%;
-}
-
-/* Total Orders and Products count div- when customer is logged in*/
-.total-count-div-customer{
-    position: absolute;
-    display: block;
-    top: 300px;
-    left: 15px;
-    width: 90%;
+    width: 40%;
+    margin: auto;
+    text-align: center;
 }
 
 /* Total Orders and Products count text design*/
-.total-count{
-    color: white; 
+.total-count {
+    color: white;
     padding: 0;
-    margin: 0;
-    /* font-family: totalCount; */
-    font-size: 14px;
-    text-shadow: 1px 1px 2px rgb(24, 6, 11); 
-}
-
-/* Div for different customer's shopping statuses */
-.panelC-top-div{
-    width: 75%;
-    position: absolute;
-    top: 40px;
-    left: 30px;
+    margin: auto;
     text-align: center;
-    display: block;
-}
-
-/* Wrapping div for "panelC-top-div" */
-.panelC-above-count{
-    display: block;
+    font-size: 13px;
+    text-shadow: 1px 1px 2px rgb(24, 6, 11);
 }
 
 /* Button design */
-button{
-    margin:5px;
+button {
+    margin: 5px;
     color: white;
-    background-image: radial-gradient( rgb(121, 50, 74),  rgb(126, 39, 59));
+    background-image: radial-gradient( rgb(121, 50, 74), rgb(126, 39, 59));
     border-radius: 5px;
 }
 
-/* Right hand side - welcome title */
-.panelC-title{
+/* Welcome title */
+.welcome-title {
     color: white;
     font-family: myTitle;
     font-size: 45px;
@@ -137,8 +101,8 @@ button{
     padding: 0;
 }
 
-/* Right hand side - welcome back title */
-.welcome-back-title{
+/* Welcome back title */
+.welcome-back-title {
     color: white;
     font-family: myTitle;
     font-size: 32px;
@@ -146,8 +110,8 @@ button{
     padding: 0;
 }
 
-/* Text for customer's shopping statuses */
-.panelC-text{
+/* Text for customer's shopping details */
+.shopping-details-text {
     color: white;
     padding: 0;
     margin: 0;
@@ -156,116 +120,96 @@ button{
 
 /* Design for screen smaller than 575px */
 @media screen and (max-width: 575px) {
-    
-    /* Top divs of the page */
-    .login, .welcome-div, .panelC {
+
+    /* Top div of the page */
+    .home-div {
         float: none;
         width: 85%;
         margin-top: 5px;
         display: block;
         margin: auto;
     }
-    
-    /* Total count div - before customer logged in */
-    .total-count-div{
-        width: 100%; 
+    /* Total Orders and Products count div */
+    .total-count-div {
+        width: 100%;
         display: block;
-        bottom: 170px;
         margin: auto;
     }
 
-    /* Total count div - after customer logged in */
-    .total-count-div-customer{
-        width:100%;
-        bottom: 170px;
+    /* Welcome title design */
+    .welcome-title {
+        font-size: 40px;
     }
 
-    /* Welcome title design */
-    .welcome-title{
-        font-size: 40px;   
+    /* Right hand side - welcome back title */
+    .welcome-back-title {
+        font-size: 25px;
     }
 
     /* Hello customer title */
-    .hello-customer{
+    .hello-customer {
         font-size: 30px;
-        margin:auto;
+        margin: 0;
     }
-    
+
     /* Hello customer div */
-    .hello-customer-div{
-        margin:auto;
+    .hello-customer-div {
+        margin: auto;
         text-align: center;
     }
 
     /* Divider image */
-    .divider{
+    .divider {
         display: none;
     }
 
     /* Total Orders and Products count text design*/
-    .total-count{
-        font-size: 14px;
-        margin: 5px;
+    .total-count {
+        font-size: 13px;
     }
 
     /* Image under Welcome section */
-    .image{
+    .image {
         display: block;
         margin: auto;
-    }
-
-    /* Div for different customer's shopping statuses */
-    .panelC-top-div{
-        display: block;
+        width: 40%;
     }
 }
 
 /* Design for screen larger than 575px and smaller than 991px (including 991px) */
 @media screen and (max-width: 991px) and (min-width: 576px) {
-    
-    /* Login div */
-    .login {
-        float: left;
-        width: 25%;
-        margin-top: 5px;
-        margin-left: 10px;
-    }
 
-    /* Welcome div- introduction to website */
-    .welcome-div{
-        width: 40%;
+    /* Top div of the page */
+    .home-div {
+        width: 85%;
+        height: 100%;
         display: inline-block;
     }
 
-    /* Text for customer's shopping statuses */
-    .panelC-text{
+    /* Text for customer's shopping details */
+    .shopping-details-text {
         font-size: 12px;
     }
 
-    /* Right side div */
-    .panelC{
-        width: 25%;
-        height: 90%;
-        display: inline-block;
-    }
-
     /* Total Orders and Products count text design*/
-    .total-count{
-        font-size: 10px;
-    }
-
-    /* Total Orders and Products count div- when customer is logged in*/
-    .total-count-div-customer{
-        width:100%;
+    .total-count {
+        font-size: 12px;
     }
 
     /* Button design */
-    button{
+    button {
         font-size: 14px;
     }
 
-    /* Right hand side - welcome title */
-    .panelC-title{
+    /* Welcome title */
+    .welcome-title {
         font-size: 30px;
+    }
+
+    /* Image-div - under customer's shopping details */
+    .image-div {
+        width: 100%;
+        display: inline-block;
+        margin: auto;
     }
 }

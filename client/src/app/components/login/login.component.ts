@@ -12,6 +12,7 @@ import { Action } from 'src/app/redux/action';
 import { CartsService } from 'src/app/services/carts.service';
 import { OrdersService } from 'src/app/services/orders.service';
 import { CartsItemsService } from 'src/app/services/carts-items.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -156,5 +157,15 @@ export class LoginComponent {
   // Send data to parent component - home:
   public sendLoggedInEvent():void{
     this.loggedInEvent.emit(this.loggedIn);
+  }
+
+  // Show admin checkbox only in dev mode
+  public isDevMode():boolean{
+    if(environment.production){
+      return false;
+    }
+    else{
+      return true;
+    }
   }
 }

@@ -2,10 +2,13 @@
     <img src="/assets/icons/08.png">
     <p>Shopping Smart</p>
 </div>
-<nav *ngIf="customer">
-    <a routerLink="/home" routerLinkActive="current-link">Home</a>
-</nav>
-<span *ngIf="customer"> | </span>
-<div *ngIf="customer || admin">
-    <button class="btn btn-link logout-button" type="button" (click)="logout($event)">Logout</button>
+<div class="menu">
+    <nav *ngIf="customer" class="home-nav">
+        <a routerLink="/home" routerLinkActive="current-link">Home</a>
+    </nav>
+    <span *ngIf="customer"> | </span>
+    <div *ngIf="customer || admin" class="logout-nav">
+        <button class="btn btn-link logout-button" type="button" (click)="logout($event)">Logout</button>
+    </div>
 </div>
+

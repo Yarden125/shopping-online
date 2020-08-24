@@ -6,6 +6,7 @@ import { Page404Component } from './components/page404/page404.component';
 import { ShoppingPageComponent } from './components/shopping-page/shopping-page.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { OrderPageComponent } from './components/order-page/order-page.component';
+import { DisclaimerComponent } from './components/disclaimer/disclaimer.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: "admin-page", component: AdminPageComponent},
   {path: "shopping-page/:userID", component: ShoppingPageComponent},
   {path: "order-page/:cartID", component: OrderPageComponent},
+  {path: "disclaimer", component: DisclaimerComponent},
   {path: "", redirectTo:"/home", pathMatch: "full"},
   {path: "**", component: Page404Component}
 ];

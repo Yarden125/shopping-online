@@ -1,0 +1,33 @@
+/* Text design */
+p {
+    color: white;
+    font-size: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Disclaimer link design */
+a {
+    size: small;
+    font-size: 9px;
+    color: white;
+    display: inline-block;
+    padding: 0;
+    margin: 0 auto;
+}
+
+/* Disclaimer link design - hover */
+a:hover {
+    size: small;
+    font-size: 9px;
+    color: white;
+    display: inline-block;
+    padding: 0;
+    margin: 0 auto;
+}
+
+/* Disclaimer nav design */
+.disclaimer {
+    padding: 0;
+    margin: 0 auto;
+}

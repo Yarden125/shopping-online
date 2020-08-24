@@ -55,3 +55,14 @@ button{
     }
 }
 
+/* Design for screen larger than 575px and smaller than 991px (including 991px) */
+@media screen and (max-width: 991px) and (min-width: 576px) {
+    
+    /* search form */
+    .search-form{
+        text-align: right;
+        margin: auto;
+        display: block;
+    }
+}
+

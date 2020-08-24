@@ -4,7 +4,7 @@ section{
     padding:15px;
     display: grid;
     border: 1px solid gray;
-    grid-template-rows: 15% 80%;
+    grid-template-rows: 10% 80% 10%;
     grid-template-columns: repeat(12,1fr);
     text-align: center;
     box-sizing: border-box;
@@ -25,51 +25,16 @@ main{
     height: 100%;
 }
 
-/* Contact us div */
-.contact-div{
-    display: inline-block;
-    position: absolute;
-    right: 20px;
+/* footer design */
+footer{
+    grid-column: span 12;
 }
 
-/* Contact us text design */
-.contact-us{
-    margin: 2px;
-    padding: 2px;
-    font-size: 14px;
-    color: rgb(255, 255, 255);
-    text-shadow: 2px 2px 3px rgb(26, 7, 13);
-}
-
-/* Contact us title */
-.contact-us-title{
-    font-size: 30px;
-    color: white;
-    font-family: myTitle;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-/* Logi div: */
+/* Login div */
 .logo-div{
     display: inline-block;
-    position: absolute;
-    left: 20px;
 }
 
-/* Email icon design */
-.email-icon{
-    width: 20px;
-    height: 20px;
-    filter: brightness(800%) drop-shadow(2px 2px 3px rgb(31, 8, 19)); 
-}
-
-/* Phone icon design  */
-.phone-icon{
-    width: 20px;
-    height: 20px;
-    filter: invert(100%) brightness(1000%) drop-shadow(2px 2px 3px rgb(31, 8, 19));
-}
 
 /* Disclaimer text */
 .disclaimer-p{
@@ -86,42 +51,10 @@ main{
 
 /* Design for screen smaller than 575px */
 @media screen and (max-width: 575px) {
-    
-    /* Top div */
-    section{
-        grid-template-rows: 25% 75%; 
-    }
-
-    /* Contact us title */
-    .contact-us-title{
-        font-size: 20px;
-    }
-
-    /* Contact us text design */
-    .contact-us{
-        font-size: 10px;
-    }
-
-    /* Phone icon design  */
-    .phone-icon{
-        width: 15px;
-        height: 15px; 
-    }
-
-    /* Email icon design  */
-    .email-icon{
-        width: 15px;
-        height: 15px;  
-    }
 
     /* Logo div */
     .logo-div{
         left: 10px;
-    }
-
-    /* Contact us div */
-    .contact-div{
-        right: 10px;
     }
 
     /* main design */

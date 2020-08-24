@@ -22,9 +22,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OrderPageComponent } from './components/order-page/order-page.component';
 import { SearchProductsComponent } from './components/search-products/search-products.component';
 import { PopupOrderConfirmationComponent } from './components/popup-order-confirmation/popup-order-confirmation.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { DisclaimerComponent } from './components/disclaimer/disclaimer.component';
 
 @NgModule({
-  declarations: [LayoutComponent, LoginComponent, RegisterComponent, Page404Component, HomeComponent, AddProductComponent, UpdateProductComponent, AdminPageComponent, ShoppingPageComponent, SiteMenuComponent, CartComponent, PopupsProductsComponent, OrderPageComponent, SearchProductsComponent, PopupOrderConfirmationComponent],
+  declarations: [LayoutComponent, LoginComponent, RegisterComponent, Page404Component, HomeComponent, AddProductComponent, UpdateProductComponent, AdminPageComponent, ShoppingPageComponent, SiteMenuComponent, CartComponent, PopupsProductsComponent, OrderPageComponent, SearchProductsComponent, PopupOrderConfirmationComponent, FooterComponent, DisclaimerComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, NgReduxModule, NgbModule],
   entryComponents:[PopupsProductsComponent, PopupOrderConfirmationComponent],
   providers: [],
