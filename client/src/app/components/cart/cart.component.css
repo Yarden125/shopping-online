@@ -84,8 +84,8 @@ table, tr, td{
 
 /* Total amount design */
 .total-p{
-    font-size:28px;
-    margin:2px;
+    font-size:26px;
+    margin:0;
     font-family: myTitle;
     color: white;
     text-shadow: 2px 2px 3px rgb(20, 5, 10);

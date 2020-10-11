@@ -50,7 +50,7 @@
     height:90%;
     width: 100%;
     padding: 0;
-    margin: 0;
+    margin: auto;
 }
 
 /* Categories div */
@@ -78,9 +78,9 @@
 /* Products and Categories div */
 .products-master-div{
     border: 1px solid rgb(133, 132, 132);
-    width:70%;
+    width:72%;
     margin-top: 10px;
-    height:100%;
+    height:90%;
     float: left;
     box-shadow: 3px 3px 5px rgb(48, 48, 48);
     border-radius: 7px;
@@ -92,7 +92,7 @@
     float: left;
     width:25%;
     margin: 10px;
-    height:100%;
+    height:90%;
     box-shadow: 3px 3px 5px rgb(88, 88, 88);
     border-radius: 7px;
 }
